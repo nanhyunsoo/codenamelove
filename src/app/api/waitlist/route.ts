@@ -18,10 +18,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key =
+      process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!url || !key) {
+      console.error("Supabase env not configured");
+      return NextResponse.json(
+        { error: "Service not configured" },
+        { status: 503 }
+      );
+    }
+
+    const supabase = createClient(url, key);
 
     const { error } = await supabase.from("waitlist_users").insert({
       email: email.trim(),
