@@ -5,7 +5,6 @@ import LandingNav from "@/components/layout/LandingNav";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/landing/HeroSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
-import SocialProofSection from "@/components/landing/SocialProofSection";
 import FAQSection from "@/components/landing/FAQSection";
 import WaitlistSection from "@/components/landing/WaitlistSection";
 import WaitlistModal from "@/components/landing/WaitlistModal";
@@ -61,11 +60,6 @@ export default function LandingPage() {
       {/* Features */}
       <section id="product" className="py-16 md:py-24">
         <FeaturesSection />
-      </section>
-
-      {/* Social Proof */}
-      <section id="solutions" className="py-16 md:py-24">
-        <SocialProofSection />
       </section>
 
       {/* FAQ */}

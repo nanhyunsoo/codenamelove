@@ -10,7 +10,6 @@ import Link from "next/link";
 export default function LandingNav() {
   const navLinks = [
     { href: "#product", label: "Product" },
-    { href: "#solutions", label: "Solutions" },
     { href: "#pricing", label: "Pricing" },
     { href: "#developers", label: "Developers" },
   ];

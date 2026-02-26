@@ -7,8 +7,6 @@ interface ModalProps {
   onClose: () => void;
   title?: string;
   children: React.ReactNode;
-  /** 포커스 트랩 (접근성) */
-  trapFocus?: boolean;
 }
 
 export default function Modal({
@@ -16,7 +14,6 @@ export default function Modal({
   onClose,
   title,
   children,
-  trapFocus = true,
 }: ModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const onCloseRef = useRef(onClose);
