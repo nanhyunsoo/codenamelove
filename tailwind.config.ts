@@ -8,7 +8,12 @@ const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx,css}",
+  ],
+  /* @apply에서 custom typography 유틸리티 인식 보장 (content 스캔 순서 이슈 회피) */
+  safelist: [
+    { pattern: /^text-type-(body|body-lg|body-sm|display|display-lg|h1|h2|h3|caption|caption-sm)$/ },
+    { pattern: /^tracking-type-(wide|wider)$/ },
   ],
   theme: {
     extend: {

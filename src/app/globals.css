@@ -29,7 +29,11 @@
   }
 
   body {
-    @apply bg-canvas text-body antialiased text-type-body;
+    @apply bg-canvas text-body antialiased;
+    /* text-type-body 대신 raw CSS: @apply에서 custom fontSize 유틸리티 인식 이슈 회피 */
+    font-size: 1rem;
+    line-height: 1.625;
+    letter-spacing: 0;
     background-color: var(--canvas);
     min-height: 100vh;
   }
