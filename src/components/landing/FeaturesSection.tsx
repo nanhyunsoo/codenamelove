@@ -1,4 +1,6 @@
-"use client";
+\"use client\";
+
+import Image from \"next/image\";
 
 /**
  * Core Features - Service example UIs
@@ -179,17 +181,34 @@ export default function FeaturesSection() {
               className="bg-dark-base rounded-card p-6 shadow-elevation-2 border border-divider"
               style={{ minHeight: "200px" }}
             >
-              <p className="type-caption-uppercase mb-3">
-                Match Notifications
-              </p>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent-primary/25 flex items-center justify-center text-type-body-sm font-semibold text-accent-primary shrink-0">
-                  SJ
+              <p className="type-caption-uppercase mb-3">Match Notifications</p>
+              <div className="flex items-start gap-4">
+                <div className="relative shrink-0">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-accent-primary/25">
+                    <Image
+                      src="/images/match-profile.png"
+                      alt="Matched profile"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -top-2 left-0 rounded-pill bg-cta-dark px-2 py-0.5 text-[11px] font-medium text-headline border border-accent-primary/60 shadow-elevation-2">
+                    Match in 1 days.
+                  </div>
+                  <div className="flex -space-x-2 mt-4">
+                    <div className="w-6 h-6 rounded-full bg-accent-primary/30 flex items-center justify-center text-[11px] text-accent-primary font-semibold">
+                      SJ
+                    </div>
+                    <div className="w-6 h-6 rounded-full bg-chip-default flex items-center justify-center text-[11px] text-chip-text font-semibold">
+                      MK
+                    </div>
+                    <div className="w-6 h-6 rounded-full bg-chip-default/70 flex items-center justify-center text-[11px] text-chip-text font-semibold">
+                      +2
+                    </div>
+                  </div>
                 </div>
                 <div className="flex-1">
-                  <p className="text-type-body-sm font-medium text-headline mb-1">
-                    Match in 1 days.
-                  </p>
                   <p className="text-type-body-sm text-body mb-3">
                     Similar values (growth, family). Shared hobbies: cooking and travel.
                     Compatible communication style for long-term conversations.
