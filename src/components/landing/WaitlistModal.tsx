@@ -20,7 +20,6 @@ export default function WaitlistModal({
   onResultDismiss,
 }: WaitlistModalProps) {
   const [email, setEmail] = useState("");
-  const [relationshipIntent, setRelationshipIntent] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,7 +27,7 @@ export default function WaitlistModal({
     if (!email.trim()) return;
     setLoading(true);
     try {
-      await onSubmit(email.trim(), relationshipIntent?.trim() || undefined);
+      await onSubmit(email.trim());
     } finally {
       setLoading(false);
     }
@@ -36,7 +35,6 @@ export default function WaitlistModal({
 
   const handleClose = () => {
     setEmail("");
-    setRelationshipIntent("");
     onResultDismiss?.();
     onClose();
   };
@@ -71,13 +69,6 @@ export default function WaitlistModal({
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
             required
-          />
-          <Input
-            label="Relationship Intent (optional)"
-            type="text"
-            value={relationshipIntent}
-            onChange={(e) => setRelationshipIntent(e.target.value)}
-            placeholder="Long-term, Casual, Open..."
           />
           <div className="flex gap-3 pt-2">
             <Button
