@@ -10,12 +10,12 @@ const features = [
   },
   {
     title: "Compatibility Analysis",
-    desc: "대화 기반 궁합 분석으로 진짜 맞는 상대를 찾아요.",
+    desc: "Compatibility analysis based on conversations to find the right match.",
     image: "📊",
   },
   {
     title: "You Meet",
-    desc: "매칭 완료 후 실제 만남으로 이어집니다.",
+    desc: "After matching, you meet in real life.",
     image: "💑",
   },
 ];

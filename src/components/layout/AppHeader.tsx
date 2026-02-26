@@ -72,7 +72,7 @@ export default function AppHeader({ title, statusBadge }: AppHeaderProps) {
                 role="menuitem"
                 onClick={() => setMenuOpen(false)}
               >
-                설정
+                Settings
               </Link>
               {user?.role === "admin" && (
                 <Link
@@ -81,7 +81,7 @@ export default function AppHeader({ title, statusBadge }: AppHeaderProps) {
                   role="menuitem"
                   onClick={() => setMenuOpen(false)}
                 >
-                  대기자 관리
+                  Waitlist Admin
                 </Link>
               )}
               <button
@@ -93,7 +93,7 @@ export default function AppHeader({ title, statusBadge }: AppHeaderProps) {
                 className="block w-full text-left px-4 py-2 text-body hover:bg-card-dark transition-colors"
                 role="menuitem"
               >
-                로그아웃
+                Log out
               </button>
             </div>
           )}

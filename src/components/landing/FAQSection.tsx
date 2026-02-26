@@ -4,16 +4,16 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "Agent가 정말 내 선호를 반영하나요?",
-    a: "온보딩에서 입력하신 관계 형태, 거리, 취미, 가치관 등을 학습합니다. 에이전트가 이를 바탕으로 대화하고 매칭합니다.",
+    q: "Does the Agent reflect my preferences?",
+    a: "Yes. During onboarding you provide relationship type, distance, hobbies, and values. The Agent learns from these and negotiates matches accordingly.",
   },
   {
-    q: "비용은 어떻게 되나요?",
-    a: "초기에는 대기자로 등록 후 초대를 받아 무료로 체험할 수 있습니다. 정식 런칭 후 요금제가 공개됩니다.",
+    q: "How much does it cost?",
+    a: "Early users can join the waitlist and get invited to try for free. Pricing will be announced at launch.",
   },
   {
-    q: "개인정보는 안전한가요?",
-    a: "데이터 암호화 및 개인정보처리방침을 준수하며, 에이전트 학습 시 민감 정보는 제외됩니다.",
+    q: "Is my data safe?",
+    a: "We encrypt data and follow privacy policy. Sensitive information is excluded when training the Agent.",
   },
 ];
 
@@ -26,7 +26,7 @@ export default function FAQSection() {
         className="font-display text-3xl font-bold text-headline text-center mb-12"
         style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
       >
-        자주 묻는 질문
+        Frequently Asked Questions
       </h2>
       <div className="space-y-2">
         {faqs.map((faq, i) => (

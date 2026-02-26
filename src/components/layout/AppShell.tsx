@@ -24,7 +24,7 @@ export default function AppShell({
       <AppHeader title={title} statusBadge={statusBadge} />
       <div className="flex flex-1">
         <aside className="hidden md:flex w-48 shrink-0 flex-col border-r border-divider py-4">
-          <nav className="px-4 space-y-1" aria-label="앱 내비게이션">
+          <nav className="px-4 space-y-1" aria-label="App navigation">
             {appNavItems.map((item) => (
               <Link
                 key={item.href}

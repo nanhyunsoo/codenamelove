@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function ContactPage() {
   return (
     <main className="min-h-screen p-8 max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold text-headline mb-4">문의</h1>
+      <h1 className="text-2xl font-bold text-headline mb-4">Contact</h1>
       <p className="text-body-secondary text-sm">contact@codename love.io</p>
       <Link href="/" className="text-accent-primary hover:underline mt-6 inline-block">
-        ← Landing으로
+        ← Back to Landing
       </Link>
     </main>
   );

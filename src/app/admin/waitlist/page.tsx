@@ -46,7 +46,7 @@ export default function WaitlistAdminPage() {
   };
 
   return (
-    <AppShell title="대기자 관리">
+    <AppShell title="Waitlist Admin">
       <Breadcrumb
         items={[
           { label: "App", href: "/app/console" },
@@ -58,29 +58,29 @@ export default function WaitlistAdminPage() {
       <div className="mt-8 space-y-6">
         {/* 필터 */}
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-4">필터</h3>
+          <h3 className="text-lg font-semibold text-headline mb-4">Filter</h3>
           <div className="grid md:grid-cols-4 gap-4">
             <Input
-              label="이메일 검색"
+              label="Search email"
               value={searchEmail}
               onChange={(e) => setSearchEmail(e.target.value)}
-              placeholder="검색..."
+              placeholder="Search..."
             />
             <Select
-              label="상태"
+              label="Status"
               options={[
-                { value: "all", label: "전체" },
-                { value: "waiting", label: "대기" },
-                { value: "invited", label: "초대됨" },
-                { value: "excluded", label: "제외" },
+                { value: "all", label: "All" },
+                { value: "waiting", label: "Waiting" },
+                { value: "invited", label: "Invited" },
+                { value: "excluded", label: "Excluded" },
               ]}
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
             />
             <Select
-              label="유입경로"
+              label="Source"
               options={[
-                { value: "all", label: "전체" },
+                { value: "all", label: "All" },
                 { value: "landing", label: "Landing" },
                 { value: "moltbook", label: "Moltbook" },
               ]}
@@ -98,25 +98,25 @@ export default function WaitlistAdminPage() {
         {/* 통계 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card variant="elevated">
-            <p className="text-body-secondary text-sm">전체</p>
+            <p className="text-body-secondary text-sm">Total</p>
             <p className="text-2xl font-bold text-headline">
               {mockWaitlistUsers.length}
             </p>
           </Card>
           <Card variant="elevated">
-            <p className="text-body-secondary text-sm">대기</p>
+            <p className="text-body-secondary text-sm">Waiting</p>
             <p className="text-2xl font-bold text-headline">
               {mockWaitlistUsers.filter((u) => u.status === "waiting").length}
             </p>
           </Card>
           <Card variant="elevated">
-            <p className="text-body-secondary text-sm">초대됨</p>
+            <p className="text-body-secondary text-sm">Invited</p>
             <p className="text-2xl font-bold text-headline">
               {mockWaitlistUsers.filter((u) => u.status === "invited").length}
             </p>
           </Card>
           <Card variant="elevated">
-            <p className="text-body-secondary text-sm">제외</p>
+            <p className="text-body-secondary text-sm">Excluded</p>
             <p className="text-2xl font-bold text-headline">
               {mockWaitlistUsers.filter((u) => u.status === "excluded").length}
             </p>
@@ -126,7 +126,7 @@ export default function WaitlistAdminPage() {
         {/* 리스트 */}
         <Card variant="elevated">
           <h3 className="text-lg font-semibold text-headline mb-4">
-            대기자 리스트 ({filtered.length})
+            Waitlist ({filtered.length})
           </h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -173,9 +173,9 @@ export default function WaitlistAdminPage() {
                           console.log("status change", u.id, v);
                         }}
                       >
-                        <option value="waiting">대기</option>
-                        <option value="invited">초대</option>
-                        <option value="excluded">제외</option>
+                        <option value="waiting">Waiting</option>
+                        <option value="invited">Invite</option>
+                        <option value="excluded">Exclude</option>
                       </select>
                     </td>
                   </tr>

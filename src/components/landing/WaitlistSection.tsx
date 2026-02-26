@@ -17,10 +17,10 @@ export default function WaitlistSection({ onJoinClick }: WaitlistSectionProps) {
           className="font-display text-2xl md:text-3xl font-bold text-headline mb-4"
           style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
         >
-          AI 매칭 소식을 가장 먼저 받아보세요
+          Be the first to know about AI matching
         </h2>
         <p className="text-body-secondary mb-8">
-          대기자 등록 후 초대를 받으면 서비스를 먼저 체험할 수 있어요.
+          Join the waitlist and get early access when we launch.
         </p>
         <Button onClick={onJoinClick}>Join Waitlist</Button>
       </div>

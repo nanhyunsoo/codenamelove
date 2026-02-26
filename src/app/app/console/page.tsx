@@ -49,15 +49,15 @@ function ConsoleContent() {
           <div className="space-y-6 max-w-2xl">
             <Card variant="elevated">
               <h3 className="text-lg font-semibold text-headline mb-4">
-                에이전트 설정
+                Agent settings
               </h3>
               <p className="text-body-secondary text-sm mb-4">
-                온보딩에서 입력한 선호가 에이전트에 반영됩니다.
+                Preferences from onboarding are applied to the Agent.
               </p>
               <div className="text-body-secondary text-sm">
-                <p>• 관계 형태: 장기 연애</p>
-                <p>• 거리: 같은 도시</p>
-                <p>• 취미: 요리, 독서, 여행</p>
+                <p>• Relationship: Long-term</p>
+                <p>• Distance: Same city</p>
+                <p>• Hobbies: Cooking, Reading, Travel</p>
               </div>
             </Card>
           </div>
@@ -67,18 +67,18 @@ function ConsoleContent() {
           <div className="space-y-6">
             <Card variant="elevated">
               <h3 className="text-lg font-semibold text-headline mb-4">
-                학습 실행
+                Run training
               </h3>
               <p className="text-body-secondary text-sm mb-4">
-                에이전트가 선호 데이터를 학습합니다. 약 5–10분 소요됩니다.
+                The Agent learns from your preference data. Takes about 5–10 minutes.
               </p>
               <Button onClick={() => setTrainConfirmOpen(true)}>
-                Train 실행
+                Run Train
               </Button>
             </Card>
             <Card variant="elevated">
               <h3 className="text-lg font-semibold text-headline mb-4">
-                로그
+                Logs
               </h3>
               <div className="space-y-2 font-mono text-sm">
                 {mockConsoleLogs.map((log) => (
@@ -104,21 +104,20 @@ function ConsoleContent() {
           <div className="space-y-6">
             <Card variant="elevated">
               <h3 className="text-lg font-semibold text-headline mb-4">
-                배포
+                Deploy
               </h3>
               <p className="text-body-secondary text-sm mb-4">
-                에이전트를 배포하면 파트너 검색에 사용할 수 있습니다. 공유 범위와
-                권한을 확인해주세요.
+                Deploy the Agent to use it for partner search. Confirm sharing scope and permissions.
               </p>
               <Button
                 onClick={() => setDeployConfirmOpen(true)}
                 disabled={deployed}
               >
-                {deployed ? "배포됨" : "Deploy"}
+                {deployed ? "Deployed" : "Deploy"}
               </Button>
               {deployed && (
                 <p className="mt-2 text-accent-primary text-sm font-medium">
-                  배포 완료. 공유 링크가 생성되었습니다.
+                  Deploy complete. Share link generated.
                 </p>
               )}
             </Card>
@@ -129,22 +128,21 @@ function ConsoleContent() {
       <Modal
         isOpen={trainConfirmOpen}
         onClose={() => setTrainConfirmOpen(false)}
-        title="Train 실행 확인"
+        title="Confirm Train"
       >
         <p className="text-body mb-6">
-          학습을 실행하면 비용과 시간이 소요됩니다. 계속할까요?
+          Running training will use resources and time. Continue?
         </p>
         <div className="flex gap-4">
           <Button variant="ghost" onClick={() => setTrainConfirmOpen(false)}>
-            취소
+            Cancel
           </Button>
           <Button
             onClick={() => {
               setTrainConfirmOpen(false);
-              // Mock: 학습 완료
             }}
           >
-            실행
+            Run
           </Button>
         </div>
       </Modal>
@@ -152,14 +150,14 @@ function ConsoleContent() {
       <Modal
         isOpen={deployConfirmOpen}
         onClose={() => setDeployConfirmOpen(false)}
-        title="Deploy 확인"
+        title="Confirm Deploy"
       >
         <p className="text-body mb-6">
-          공유 범위: 개인용. 권한: 검색 및 매칭.
+          Sharing scope: Personal. Permissions: Search & match.
         </p>
         <div className="flex gap-4">
           <Button variant="ghost" onClick={() => setDeployConfirmOpen(false)}>
-            취소
+            Cancel
           </Button>
           <Button
             onClick={() => {
@@ -181,7 +179,7 @@ export default function ConsolePage() {
       title="Agent Console"
       statusBadge="Deployed"
     >
-      <Suspense fallback={<div className="text-body-secondary">로딩 중...</div>}>
+      <Suspense fallback={<div className="text-body-secondary">Loading...</div>}>
         <ConsoleContent />
       </Suspense>
     </AppShell>

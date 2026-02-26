@@ -35,28 +35,28 @@ export default function SearchPage() {
         {/* 검색 조건 */}
         <Card variant="elevated">
           <h3 className="text-lg font-semibold text-headline mb-4">
-            검색 조건
+            Search criteria
           </h3>
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <Select
-              label="관계 형태"
+              label="Relationship type"
               options={[
-                { value: "longterm", label: "장기 연애" },
-                { value: "casual", label: "캐주얼" },
+                { value: "longterm", label: "Long-term" },
+                { value: "casual", label: "Casual" },
               ]}
-              placeholder="선택"
+              placeholder="Select"
             />
-            <Input label="지역" placeholder="서울" />
+            <Input label="Location" placeholder="e.g. New York" />
           </div>
           <Button onClick={handleSearch} disabled={loading}>
-            {loading ? "검색 중..." : "검색 실행"}
+            {loading ? "Searching..." : "Search"}
           </Button>
         </Card>
 
         {/* 결과 리스트 */}
         <div>
           <h3 className="text-lg font-semibold text-headline mb-4">
-            검색 결과 ({results.length})
+            Results ({results.length})
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {results.map((p) => (

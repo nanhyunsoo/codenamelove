@@ -46,21 +46,21 @@ export default function WaitlistModal({
       {result === "success" ? (
         <div className="text-center py-4">
           <p className="text-headline text-lg mb-4">
-            ✓ 등록되었습니다! 곧 연락드릴게요.
+            ✓ You're on the list! We'll be in touch soon.
           </p>
-          <Button onClick={handleClose}>확인</Button>
+          <Button onClick={handleClose}>OK</Button>
         </div>
       ) : result === "duplicate" ? (
         <div className="text-center py-4">
           <p className="text-body mb-4">
-            이미 등록된 이메일이에요.
+            This email is already registered.
           </p>
-          <Button onClick={onResultDismiss}>다시 시도</Button>
+          <Button onClick={onResultDismiss}>Try again</Button>
         </div>
       ) : result === "error" ? (
         <div className="text-center py-4">
-          <p className="text-red-400 mb-4">등록에 실패했습니다. 다시 시도해주세요.</p>
-          <Button onClick={onResultDismiss}>다시 시도</Button>
+          <p className="text-red-400 mb-4">Registration failed. Please try again.</p>
+          <Button onClick={onResultDismiss}>Try again</Button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -89,7 +89,7 @@ export default function WaitlistModal({
               Cancel
             </Button>
             <Button type="submit" disabled={loading} className="flex-1">
-              {loading ? "등록 중..." : "Register"}
+              {loading ? "Registering..." : "Register"}
             </Button>
           </div>
         </form>

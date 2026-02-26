@@ -15,18 +15,18 @@ export default function StatePlaceholder({
 }: StatePlaceholderProps) {
   const config = {
     empty: {
-      title: title ?? "데이터가 없습니다",
-      message: message ?? "아직 표시할 내용이 없어요.",
+      title: title ?? "No data",
+      message: message ?? "Nothing to display yet.",
       icon: "📭",
     },
     loading: {
-      title: title ?? "로딩 중",
-      message: message ?? "잠시만 기다려주세요.",
+      title: title ?? "Loading",
+      message: message ?? "Please wait.",
       icon: "⏳",
     },
     error: {
-      title: title ?? "오류가 발생했습니다",
-      message: message ?? "다시 시도해주세요.",
+      title: title ?? "Something went wrong",
+      message: message ?? "Please try again.",
       icon: "⚠️",
     },
   }[variant];
@@ -47,7 +47,7 @@ export default function StatePlaceholder({
           onClick={onRetry}
           className="px-6 py-2.5 rounded-pill bg-accent-primary text-cta-dark font-medium hover:bg-accent-hover transition-colors focus-ring"
         >
-          다시 시도
+          Retry
         </button>
       )}
       {variant === "loading" && (

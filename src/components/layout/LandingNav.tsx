@@ -22,7 +22,7 @@ export default function LandingNav() {
     >
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
-        aria-label="메인 내비게이션"
+        aria-label="Main navigation"
       >
         <Link
           href="/"

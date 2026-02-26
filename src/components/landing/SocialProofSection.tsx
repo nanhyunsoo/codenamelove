@@ -5,9 +5,9 @@
  * design.json: brand strip #D9CFBD, logo #1A1A1A
  */
 const metrics = [
-  { value: "10K+", label: "대기자" },
-  { value: "92%", label: "매칭 만족도" },
-  { value: "50+", label: "파트너십" },
+  { value: "10K+", label: "Waitlist" },
+  { value: "92%", label: "Match satisfaction" },
+  { value: "50+", label: "Partnerships" },
 ];
 
 const partners = ["Moltbook", "Agent API", "Partner Apps"];

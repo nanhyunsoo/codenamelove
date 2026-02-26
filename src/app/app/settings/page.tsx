@@ -22,12 +22,12 @@ export default function SettingsPage() {
 
       <div className="mt-8 max-w-xl space-y-6">
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-4">테마</h3>
+          <h3 className="text-lg font-semibold text-headline mb-4">Theme</h3>
           <Select
-            label="화면 모드"
+            label="Display mode"
             options={[
-              { value: "dark", label: "다크" },
-              { value: "light", label: "라이트" },
+              { value: "dark", label: "Dark" },
+              { value: "light", label: "Light" },
             ]}
             value="dark"
             onChange={() => {}}
@@ -35,26 +35,26 @@ export default function SettingsPage() {
         </Card>
 
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-4">알림</h3>
+          <h3 className="text-lg font-semibold text-headline mb-4">Notifications</h3>
           <div className="space-y-2">
             <label className="flex items-center gap-2 text-body">
               <input type="checkbox" defaultChecked className="rounded" />
-              학습 완료 알림
+              Training complete
             </label>
             <label className="flex items-center gap-2 text-body">
               <input type="checkbox" defaultChecked className="rounded" />
-              매칭 추천 알림
+              Match recommendations
             </label>
           </div>
         </Card>
 
         <Card variant="elevated">
           <h3 className="text-lg font-semibold text-headline mb-4">
-            개인정보/선호
+            Profile & preferences
           </h3>
-          <Input label="이름" placeholder="이름" />
+          <Input label="Name" placeholder="Your name" />
           <div className="mt-4">
-            <Button>저장</Button>
+            <Button>Save</Button>
           </div>
         </Card>
       </div>

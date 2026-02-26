@@ -11,27 +11,27 @@ import { Button } from "@/components/ui";
 import { Modal } from "@/components/ui";
 
 const STEPS = [
-  { id: "relation", label: "관계 형태" },
-  { id: "distance", label: "거리/지역" },
-  { id: "hobbies", label: "취미/관심사" },
-  { id: "preferences", label: "추가 선호" },
-  { id: "summary", label: "확인" },
+  { id: "relation", label: "Relationship type" },
+  { id: "distance", label: "Distance/Location" },
+  { id: "hobbies", label: "Hobbies/Interests" },
+  { id: "preferences", label: "Additional preferences" },
+  { id: "summary", label: "Summary" },
 ];
 
 const relationshipOptions = [
-  { value: "longterm", label: "장기 연애" },
-  { value: "casual", label: "캐주얼" },
-  { value: "open", label: "오픈 관계" },
-  { value: "marriage", label: "결혼 상대" },
+  { value: "longterm", label: "Long-term" },
+  { value: "casual", label: "Casual" },
+  { value: "open", label: "Open relationship" },
+  { value: "marriage", label: "Marriage" },
 ];
 
 const distanceOptions = [
-  { value: "same_city", label: "같은 도시" },
-  { value: "within_1hr", label: "1시간 이내" },
-  { value: "any", label: "제한 없음" },
+  { value: "same_city", label: "Same city" },
+  { value: "within_1hr", label: "Within 1 hour" },
+  { value: "any", label: "No limit" },
 ];
 
-const hobbyChips = ["요리", "독서", "여행", "음악", "영화", "산책", "카페", "운동"];
+const hobbyChips = ["Cooking", "Reading", "Travel", "Music", "Movies", "Walking", "Cafes", "Fitness"];
 
 /**
  * Onboarding (Agent Setup)
@@ -82,33 +82,33 @@ export default function OnboardingPage() {
         {step === 0 && (
           <>
             <h2 className="text-xl font-semibold text-headline mb-4">
-              원하시는 관계 형태를 선택해주세요
+              Select your preferred relationship type
             </h2>
             <Select
               options={relationshipOptions}
               value={relationshipType}
               onChange={(e) => setRelationshipType(e.target.value)}
-              placeholder="선택"
+              placeholder="Select"
             />
           </>
         )}
         {step === 1 && (
           <>
             <h2 className="text-xl font-semibold text-headline mb-4">
-              선호하는 거리/지역
+              Preferred distance/location
             </h2>
             <Select
               options={distanceOptions}
               value={distance}
               onChange={(e) => setDistance(e.target.value)}
-              placeholder="선택"
+              placeholder="Select"
             />
           </>
         )}
         {step === 2 && (
           <>
             <h2 className="text-xl font-semibold text-headline mb-4">
-              관심 있는 취미/관심사 (복수 선택)
+              Hobbies and interests (select multiple)
             </h2>
             <div className="flex flex-wrap gap-2">
               {hobbyChips.map((h) => (
@@ -125,40 +125,40 @@ export default function OnboardingPage() {
         {step === 3 && (
           <>
             <h2 className="text-xl font-semibold text-headline mb-4">
-              추가로 중요한 점을 알려주세요
+              Anything else that matters to you
             </h2>
             <textarea
               value={preferences}
               onChange={(e) => setPreferences(e.target.value)}
-              placeholder="예: 대화를 중요시함, 외향적..."
+              placeholder="e.g. Values communication, extroverted..."
               className="w-full px-4 py-3 rounded-card bg-dark-base text-body border border-divider focus:border-accent-primary focus:outline-none placeholder:text-body-secondary min-h-[120px]"
             />
           </>
         )}
         {step === 4 && (
           <div className="bg-card-dark rounded-card p-6 space-y-4">
-            <h2 className="text-lg font-semibold text-headline">요약</h2>
+            <h2 className="text-lg font-semibold text-headline">Summary</h2>
             <p className="text-body-secondary">
-              관계 형태: {relationshipOptions.find((o) => o.value === relationshipType)?.label ?? "-"}
+              Relationship: {relationshipOptions.find((o) => o.value === relationshipType)?.label ?? "-"}
             </p>
             <p className="text-body-secondary">
-              거리: {distanceOptions.find((o) => o.value === distance)?.label ?? "-"}
+              Distance: {distanceOptions.find((o) => o.value === distance)?.label ?? "-"}
             </p>
             <p className="text-body-secondary">
-              취미: {hobbies.length ? hobbies.join(", ") : "-"}
+              Hobbies: {hobbies.length ? hobbies.join(", ") : "-"}
             </p>
             {preferences && (
-              <p className="text-body-secondary">추가: {preferences}</p>
+              <p className="text-body-secondary">Additional: {preferences}</p>
             )}
           </div>
         )}
 
         <div className="flex gap-4 mt-8">
           <Button variant="ghost" onClick={handleBack}>
-            {step === 0 ? "나가기" : "이전"}
+            {step === 0 ? "Exit" : "Back"}
           </Button>
           <Button onClick={handleNext}>
-            {step === STEPS.length - 1 ? "저장하고 시작" : "다음"}
+            {step === STEPS.length - 1 ? "Save & Start" : "Next"}
           </Button>
         </div>
       </div>
@@ -166,16 +166,16 @@ export default function OnboardingPage() {
       <Modal
         isOpen={showExitConfirm}
         onClose={() => setShowExitConfirm(false)}
-        title="온보딩 중단"
+        title="Leave onboarding?"
       >
         <p className="text-body mb-6">
-          온보딩을 중단하면 진행 내용이 저장되지 않습니다. 계속할까요?
+          Your progress will not be saved if you leave. Continue?
         </p>
         <div className="flex gap-4">
           <Button variant="ghost" onClick={() => setShowExitConfirm(false)}>
-            취소
+            Cancel
           </Button>
-          <Button onClick={handleExit}>나가기</Button>
+          <Button onClick={handleExit}>Exit</Button>
         </div>
       </Modal>
     </AppShell>

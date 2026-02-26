@@ -27,10 +27,10 @@ export default function PartnerDetailPage() {
   if (!partner) {
     return (
       <AppShell title="Partner Detail">
-        <p className="text-body-secondary">파트너를 찾을 수 없습니다.</p>
+        <p className="text-body-secondary">Partner not found.</p>
         <Link href="/app/search">
           <Button variant="ghost" className="mt-4">
-            검색으로 돌아가기
+            Back to search
           </Button>
         </Link>
       </AppShell>
@@ -48,7 +48,7 @@ export default function PartnerDetailPage() {
   };
 
   return (
-    <AppShell title={`${partner.name} 상세`}>
+    <AppShell title={`${partner.name} - Detail`}>
       <Breadcrumb
         items={[
           { label: "App", href: "/app/console" },
@@ -68,14 +68,14 @@ export default function PartnerDetailPage() {
             </span>
           </div>
           <p className="text-body-secondary text-sm mb-2">
-            {partner.age}세 · {partner.location}
+            {partner.age} · {partner.location}
           </p>
           <p className="text-body">{partner.summary}</p>
         </Card>
 
         <Card variant="elevated">
           <h3 className="text-lg font-semibold text-headline mb-3">
-            적합도 근거
+            Compatibility reasons
           </h3>
           <ul className="list-disc list-inside text-body-secondary space-y-1">
             {partner.compatibilityReasons.map((r, i) => (
@@ -86,7 +86,7 @@ export default function PartnerDetailPage() {
 
         <Card variant="elevated">
           <h3 className="text-lg font-semibold text-headline mb-3">
-            공통점
+            Common interests
           </h3>
           <div className="flex flex-wrap gap-2">
             {partner.commonInterests.map((h) => (
@@ -98,7 +98,7 @@ export default function PartnerDetailPage() {
         {partner.risks.length > 0 && (
           <Card variant="elevated">
             <h3 className="text-lg font-semibold text-amber-400 mb-3">
-              참고 사항
+              Notes
             </h3>
             <ul className="list-disc list-inside text-body-secondary space-y-1">
               {partner.risks.map((r, i) => (
@@ -109,7 +109,7 @@ export default function PartnerDetailPage() {
         )}
 
         <div className="flex flex-wrap gap-4">
-          <Button onClick={handleKeep}>Keep (저장)</Button>
+          <Button onClick={handleKeep}>Keep</Button>
           <Button variant="ghost" onClick={() => setShowPassConfirm(true)}>
             Pass
           </Button>
@@ -117,7 +117,7 @@ export default function PartnerDetailPage() {
             Ask Agent
           </Button>
           <Link href="/app/search">
-            <Button variant="ghost">목록으로</Button>
+            <Button variant="ghost">Back to list</Button>
           </Link>
         </div>
       </div>
@@ -125,14 +125,14 @@ export default function PartnerDetailPage() {
       <Modal
         isOpen={showPassConfirm}
         onClose={() => setShowPassConfirm(false)}
-        title="Pass 확인"
+        title="Confirm Pass"
       >
         <p className="text-body mb-6">
-          이 후보를 제외할까요? 되돌릴 수 없습니다.
+          Remove this candidate? This cannot be undone.
         </p>
         <div className="flex gap-4">
           <Button variant="ghost" onClick={() => setShowPassConfirm(false)}>
-            취소
+            Cancel
           </Button>
           <Button onClick={handlePass}>Pass</Button>
         </div>
@@ -142,14 +142,14 @@ export default function PartnerDetailPage() {
         <div className="fixed bottom-6 right-6 z-50 w-80 bg-dark-base rounded-card p-4 shadow-elevation-2 border border-divider">
           <h4 className="font-semibold text-headline mb-2">Ask Agent</h4>
           <p className="text-body-secondary text-sm mb-4">
-            에이전트에게 이 후보에 대해 질문해보세요.
+            Ask the Agent about this candidate.
           </p>
           <input
-            placeholder="질문 입력..."
+            placeholder="Ask a question..."
             className="w-full px-4 py-2 rounded-card bg-card-dark text-body text-sm border border-divider mb-2"
           />
           <Button variant="ghost" onClick={() => setShowAgentPanel(false)}>
-            닫기
+            Close
           </Button>
         </div>
       )}

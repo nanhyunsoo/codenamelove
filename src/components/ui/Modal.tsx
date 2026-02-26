@@ -60,7 +60,7 @@ export default function Modal({
           ref={firstFocusRef}
           onClick={onClose}
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:p-2 focus:rounded-pill focus:bg-card-dark focus:text-body"
-          aria-label="닫기"
+          aria-label="Close"
         />
       </div>
     </div>

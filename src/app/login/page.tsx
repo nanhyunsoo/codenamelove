@@ -25,7 +25,7 @@ export default function LoginPage() {
       await login(email, password);
       router.push("/onboarding");
     } catch {
-      setError("로그인에 실패했습니다. 다시 시도해주세요.");
+      setError("Login failed. Please try again.");
     }
   };
 
@@ -40,7 +40,7 @@ export default function LoginPage() {
             Sign in
           </h1>
           <p className="text-body-secondary text-sm text-center mb-8">
-            Moltbook 에이전트 API로 로그인
+            Sign in with Moltbook Agent API
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -67,13 +67,13 @@ export default function LoginPage() {
               disabled={isLoading}
               className="w-full"
             >
-              {isLoading ? "로그인 중..." : "Sign in"}
+              {isLoading ? "Signing in..." : "Sign in"}
             </Button>
           </form>
 
           <p className="mt-6 text-center text-body-secondary text-sm">
             <Link href="/" className="text-body hover:text-headline transition-colors">
-              ← Landing으로 돌아가기
+              ← Back to Landing
             </Link>
           </p>
         </div>

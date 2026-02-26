@@ -9,9 +9,9 @@ import Link from "next/link";
  */
 export default function Footer() {
   const links = [
-    { href: "/terms", label: "이용약관" },
-    { href: "/privacy", label: "개인정보처리방침" },
-    { href: "/contact", label: "문의" },
+    { href: "/terms", label: "Terms" },
+    { href: "/privacy", label: "Privacy" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
