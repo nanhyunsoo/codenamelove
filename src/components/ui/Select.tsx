@@ -32,7 +32,7 @@ export default function Select({
       {label && (
         <label
           htmlFor={selectId}
-          className="block text-sm text-body-secondary"
+          className="block text-type-body-sm text-body-secondary"
         >
           {label}
         </label>
@@ -40,7 +40,7 @@ export default function Select({
       <select
         id={selectId}
         className={`
-          w-full px-4 py-3 rounded-card bg-dark-base text-body 
+          w-full px-4 py-3 rounded-card bg-dark-base text-type-body text-body
           border border-divider focus:border-accent-primary focus:outline-none
           transition-colors focus-ring appearance-none cursor-pointer
           ${error ? "border-red-500" : ""} ${className}
@@ -65,7 +65,7 @@ export default function Select({
         ))}
       </select>
       {error && (
-        <p className="text-sm text-red-400">{error}</p>
+        <p className="text-type-body-sm text-red-400">{error}</p>
       )}
     </div>
   );

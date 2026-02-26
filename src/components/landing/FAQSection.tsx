@@ -22,10 +22,7 @@ export default function FAQSection() {
 
   return (
     <div className="max-w-2xl mx-auto px-6">
-      <h2
-        className="font-display text-3xl font-bold text-headline text-center mb-12"
-        style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
-      >
+      <h2 className="font-display text-type-h2 md:text-type-h1 font-bold text-headline text-center mb-12">
         Frequently Asked Questions
       </h2>
       <div className="space-y-2">
@@ -36,7 +33,7 @@ export default function FAQSection() {
           >
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full px-6 py-4 text-left flex items-center justify-between text-headline font-medium hover:bg-card-dark transition-colors focus-ring rounded-card"
+              className="w-full px-6 py-4 text-left flex items-center justify-between text-type-body text-headline font-medium hover:bg-card-dark transition-colors focus-ring rounded-card"
               aria-expanded={openIndex === i}
             >
               {faq.q}
@@ -45,7 +42,7 @@ export default function FAQSection() {
               </span>
             </button>
             {openIndex === i && (
-              <div className="px-6 pb-4 text-body-secondary text-sm border-t border-divider pt-4 -mt-2 mx-6">
+              <div className="px-6 pb-4 text-type-body-sm text-body-secondary border-t border-divider pt-4 -mt-2 mx-6">
                 {faq.a}
               </div>
             )}

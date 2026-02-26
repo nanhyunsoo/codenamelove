@@ -18,13 +18,13 @@ export default function Footer() {
     <footer className="bg-content-frame text-nav-text">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <span className="font-semibold text-lg">CodenameLove</span>
+          <span className="text-type-body-lg font-semibold">CodenameLove</span>
           <ul className="flex gap-6">
             {links.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="hover:text-nav-text-hover hover:underline transition-colors"
+                  className="text-type-body hover:text-nav-text-hover hover:underline transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -32,7 +32,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <p className="mt-6 text-center text-body-secondary text-sm">
+        <p className="mt-6 text-center text-type-body-sm text-body-secondary">
           © 2026 CodenameLove. AI-powered matchmaking.
         </p>
       </div>

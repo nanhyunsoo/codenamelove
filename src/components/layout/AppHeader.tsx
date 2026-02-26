@@ -31,7 +31,7 @@ export default function AppHeader({ title, statusBadge }: AppHeaderProps) {
         <div className="flex items-center gap-4">
           <Link
             href="/app/console"
-            className="text-lg font-semibold text-headline hover:text-body transition-colors"
+            className="text-type-body-lg font-semibold text-headline hover:text-body transition-colors"
           >
             CodenameLove
           </Link>
@@ -39,10 +39,10 @@ export default function AppHeader({ title, statusBadge }: AppHeaderProps) {
             <span className="text-body-secondary">/</span>
           )}
           {title && (
-            <h1 className="text-body font-medium">{title}</h1>
+            <h1 className="text-type-body font-medium">{title}</h1>
           )}
           {statusBadge && (
-            <span className="px-3 py-1 rounded-pill bg-accent-primary/20 text-accent-primary text-xs font-medium">
+            <span className="px-3 py-1 rounded-pill bg-accent-primary/20 text-accent-primary text-type-caption font-medium">
               {statusBadge}
             </span>
           )}
@@ -51,7 +51,7 @@ export default function AppHeader({ title, statusBadge }: AppHeaderProps) {
         <div className="relative" ref={menuRef}>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex items-center gap-2 px-3 py-2 rounded-card bg-card-dark hover:bg-card-dark-hover text-body transition-colors focus-ring"
+            className="flex items-center gap-2 px-3 py-2 rounded-card bg-card-dark hover:bg-card-dark-hover text-type-body-sm text-body transition-colors focus-ring"
             aria-expanded={menuOpen}
             aria-haspopup="true"
           >
@@ -68,7 +68,7 @@ export default function AppHeader({ title, statusBadge }: AppHeaderProps) {
             >
               <Link
                 href="/app/settings"
-                className="block px-4 py-2 text-body hover:bg-card-dark transition-colors"
+                className="block px-4 py-2 text-type-body-sm text-body hover:bg-card-dark transition-colors"
                 role="menuitem"
                 onClick={() => setMenuOpen(false)}
               >
@@ -77,7 +77,7 @@ export default function AppHeader({ title, statusBadge }: AppHeaderProps) {
               {user?.role === "admin" && (
                 <Link
                   href="/admin/waitlist"
-                  className="block px-4 py-2 text-body hover:bg-card-dark transition-colors"
+                  className="block px-4 py-2 text-type-body-sm text-body hover:bg-card-dark transition-colors"
                   role="menuitem"
                   onClick={() => setMenuOpen(false)}
                 >
@@ -90,7 +90,7 @@ export default function AppHeader({ title, statusBadge }: AppHeaderProps) {
                   setMenuOpen(false);
                   window.location.href = "/";
                 }}
-                className="block w-full text-left px-4 py-2 text-body hover:bg-card-dark transition-colors"
+                className="block w-full text-left px-4 py-2 text-type-body-sm text-body hover:bg-card-dark transition-colors"
                 role="menuitem"
               >
                 Log out

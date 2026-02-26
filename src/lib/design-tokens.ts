@@ -42,4 +42,9 @@ export const DESIGN = {
     avatar: "0 4px 12px rgba(0,0,0,0.35)",
     integrationIcon: "0 6px 18px rgba(0,0,0,0.3)",
   },
+  /** 타이포그래피: 자간(letterSpacing), 행간(lineHeight) - design.json 일관 적용 */
+  typography: {
+    letterSpacing: { tight: "-0.02em", normal: "0", wide: "0.04em", wider: "0.08em" },
+    lineHeight: { tight: "1.15", snug: "1.25", normal: "1.5", relaxed: "1.625" },
+  },
 } as const;

@@ -47,11 +47,11 @@ export default function Modal({
       onClick={(e) => e.target === overlayRef.current && onClose()}
     >
       <div
-        className="bg-dark-base rounded-hero p-8 max-w-md w-full shadow-elevation-2 text-headline"
+        className="bg-dark-base rounded-hero p-8 max-w-md w-full shadow-elevation-2 text-headline text-type-body"
         onClick={(e) => e.stopPropagation()}
       >
         {title && (
-          <h2 id="modal-title" className="text-xl font-semibold mb-4">
+          <h2 id="modal-title" className="text-type-h2 font-display font-semibold mb-4">
             {title}
           </h2>
         )}

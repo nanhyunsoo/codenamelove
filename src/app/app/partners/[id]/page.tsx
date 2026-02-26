@@ -27,7 +27,7 @@ export default function PartnerDetailPage() {
   if (!partner) {
     return (
       <AppShell title="Partner Detail">
-        <p className="text-body-secondary">Partner not found.</p>
+        <p className="text-type-body-sm text-body-secondary">Partner not found.</p>
         <Link href="/app/search">
           <Button variant="ghost" className="mt-4">
             Back to search
@@ -60,24 +60,24 @@ export default function PartnerDetailPage() {
       <div className="mt-8 max-w-2xl space-y-6">
         <Card variant="elevated">
           <div className="flex justify-between items-start mb-4">
-            <h2 className="text-2xl font-semibold text-headline">
+            <h2 className="text-type-h2 font-semibold text-headline">
               {partner.name}
             </h2>
-            <span className="text-accent-primary font-bold text-xl">
+            <span className="text-type-body-lg text-accent-primary font-bold">
               {partner.compatibilityScore}%
             </span>
           </div>
-          <p className="text-body-secondary text-sm mb-2">
+          <p className="text-type-body-sm text-body-secondary mb-2">
             {partner.age} · {partner.location}
           </p>
-          <p className="text-body">{partner.summary}</p>
+          <p className="text-type-body">{partner.summary}</p>
         </Card>
 
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-3">
+          <h3 className="text-type-h3 font-semibold text-headline mb-3">
             Compatibility reasons
           </h3>
-          <ul className="list-disc list-inside text-body-secondary space-y-1">
+          <ul className="list-disc list-inside text-type-body-sm text-body-secondary space-y-1">
             {partner.compatibilityReasons.map((r, i) => (
               <li key={i}>{r}</li>
             ))}
@@ -85,7 +85,7 @@ export default function PartnerDetailPage() {
         </Card>
 
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-3">
+          <h3 className="text-type-h3 font-semibold text-headline mb-3">
             Common interests
           </h3>
           <div className="flex flex-wrap gap-2">
@@ -97,10 +97,10 @@ export default function PartnerDetailPage() {
 
         {partner.risks.length > 0 && (
           <Card variant="elevated">
-            <h3 className="text-lg font-semibold text-amber-400 mb-3">
+            <h3 className="text-type-h3 font-semibold text-amber-400 mb-3">
               Notes
             </h3>
-            <ul className="list-disc list-inside text-body-secondary space-y-1">
+            <ul className="list-disc list-inside text-type-body-sm text-body-secondary space-y-1">
               {partner.risks.map((r, i) => (
                 <li key={i}>{r}</li>
               ))}
@@ -127,7 +127,7 @@ export default function PartnerDetailPage() {
         onClose={() => setShowPassConfirm(false)}
         title="Confirm Pass"
       >
-        <p className="text-body mb-6">
+        <p className="text-type-body mb-6">
           Remove this candidate? This cannot be undone.
         </p>
         <div className="flex gap-4">
@@ -140,13 +140,13 @@ export default function PartnerDetailPage() {
 
       {showAgentPanel && (
         <div className="fixed bottom-6 right-6 z-50 w-80 bg-dark-base rounded-card p-4 shadow-elevation-2 border border-divider">
-          <h4 className="font-semibold text-headline mb-2">Ask Agent</h4>
-          <p className="text-body-secondary text-sm mb-4">
+          <h4 className="text-type-h3 font-semibold text-headline mb-2">Ask Agent</h4>
+          <p className="text-type-body-sm text-body-secondary mb-4">
             Ask the Agent about this candidate.
           </p>
           <input
             placeholder="Ask a question..."
-            className="w-full px-4 py-2 rounded-card bg-card-dark text-body text-sm border border-divider mb-2"
+            className="w-full px-4 py-2 rounded-card bg-card-dark text-type-body-sm text-body border border-divider mb-2"
           />
           <Button variant="ghost" onClick={() => setShowAgentPanel(false)}>
             Close

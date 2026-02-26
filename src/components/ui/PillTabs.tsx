@@ -36,7 +36,7 @@ export default function PillTabs({
             aria-selected={isActive}
             onClick={() => onChange(tab.id)}
             className={`
-              px-[18px] py-2 rounded-pill font-medium transition-colors focus-ring
+              px-[18px] py-2 rounded-pill text-type-body-sm font-medium transition-colors focus-ring
               ${
                 isActive
                   ? "bg-accent-primary text-cta-dark"

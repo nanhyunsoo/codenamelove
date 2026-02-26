@@ -10,11 +10,11 @@ interface CardProps {
 
 const variantClasses = {
   elevated:
-    "bg-dark-base rounded-card p-5 shadow-elevation-2 text-headline",
+    "bg-dark-base rounded-card p-5 shadow-elevation-2 text-headline text-type-body",
   input:
-    "bg-input-card text-input-card-text rounded-card p-5 shadow-elevation-2",
+    "bg-input-card text-input-card-text rounded-card p-5 shadow-elevation-2 text-type-body",
   dark:
-    "bg-card-dark text-body rounded-card p-5 hover:bg-card-dark-hover transition-colors",
+    "bg-card-dark text-body text-type-body rounded-card p-5 hover:bg-card-dark-hover transition-colors",
 };
 
 export default function Card({

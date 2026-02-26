@@ -33,7 +33,7 @@ export default function Stepper({
                 onClick={() => isClickable && onStepClick(i)}
                 disabled={!isClickable}
                 className={`
-                  flex items-center gap-2 rounded-pill px-4 py-2 text-sm font-medium
+                  flex items-center gap-2 rounded-pill px-4 py-2 text-type-body-sm font-medium
                   transition-colors focus-ring
                   ${
                     isCurrent
@@ -47,7 +47,7 @@ export default function Stepper({
               >
                 <span
                   className={`
-                    w-6 h-6 rounded-full flex items-center justify-center text-xs
+                    w-6 h-6 rounded-full flex items-center justify-center text-type-caption
                     ${
                       isCompleted
                         ? "bg-accent-primary/20 text-accent-primary"

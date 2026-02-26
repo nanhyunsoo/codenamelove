@@ -34,7 +34,7 @@ export default function SearchPage() {
       <div className="mt-8 space-y-6">
         {/* 검색 조건 */}
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-4">
+          <h3 className="text-type-h3 font-semibold text-headline mb-4">
             Search criteria
           </h3>
           <div className="grid md:grid-cols-2 gap-4 mb-4">
@@ -55,7 +55,7 @@ export default function SearchPage() {
 
         {/* 결과 리스트 */}
         <div>
-          <h3 className="text-lg font-semibold text-headline mb-4">
+          <h3 className="text-type-h3 font-semibold text-headline mb-4">
             Results ({results.length})
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -63,12 +63,12 @@ export default function SearchPage() {
               <Link key={p.id} href={`/app/partners/${p.id}`} className="block">
                 <Card variant="elevated">
                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-semibold text-headline">{p.name}</h4>
-                    <span className="text-accent-primary font-medium">
+                    <h4 className="text-type-body font-semibold text-headline">{p.name}</h4>
+                    <span className="text-type-body-sm text-accent-primary font-medium">
                       {p.compatibilityScore}%
                     </span>
                   </div>
-                  <p className="text-body-secondary text-sm line-clamp-2">
+                  <p className="text-type-body-sm text-body-secondary line-clamp-2">
                     {p.summary}
                   </p>
                   <div className="flex flex-wrap gap-1 mt-3">

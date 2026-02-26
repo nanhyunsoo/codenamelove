@@ -45,21 +45,21 @@ export default function WaitlistModal({
     <Modal isOpen={isOpen} onClose={handleClose} title="Join Waitlist">
       {result === "success" ? (
         <div className="text-center py-4">
-          <p className="text-headline text-lg mb-4">
+          <p className="text-type-body-lg text-headline mb-4">
             ✓ You're on the list! We'll be in touch soon.
           </p>
           <Button onClick={handleClose}>OK</Button>
         </div>
       ) : result === "duplicate" ? (
         <div className="text-center py-4">
-          <p className="text-body mb-4">
+          <p className="text-type-body mb-4">
             This email is already registered.
           </p>
           <Button onClick={onResultDismiss}>Try again</Button>
         </div>
       ) : result === "error" ? (
         <div className="text-center py-4">
-          <p className="text-red-400 mb-4">Registration failed. Please try again.</p>
+          <p className="text-type-body text-red-400 mb-4">Registration failed. Please try again.</p>
           <Button onClick={onResultDismiss}>Try again</Button>
         </div>
       ) : (

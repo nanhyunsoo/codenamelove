@@ -36,16 +36,16 @@ export default function StatePlaceholder({
       <span className="text-4xl mb-4" aria-hidden>
         {config.icon}
       </span>
-      <h3 className="text-lg font-semibold text-headline mb-2">
+      <h3 className="text-type-h3 font-semibold text-headline mb-2">
         {config.title}
       </h3>
-      <p className="text-body-secondary mb-6 max-w-sm">
+      <p className="text-type-body-sm text-body-secondary mb-6 max-w-sm">
         {config.message}
       </p>
       {variant === "error" && onRetry && (
         <button
           onClick={onRetry}
-          className="px-6 py-2.5 rounded-pill bg-accent-primary text-cta-dark font-medium hover:bg-accent-hover transition-colors focus-ring"
+          className="px-6 py-2.5 rounded-pill bg-accent-primary text-cta-dark text-type-body-sm font-medium hover:bg-accent-hover transition-colors focus-ring"
         >
           Retry
         </button>

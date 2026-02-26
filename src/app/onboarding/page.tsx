@@ -81,7 +81,7 @@ export default function OnboardingPage() {
       <div className="mt-8 max-w-xl">
         {step === 0 && (
           <>
-            <h2 className="text-xl font-semibold text-headline mb-4">
+            <h2 className="text-type-h3 font-semibold text-headline mb-4">
               Select your preferred relationship type
             </h2>
             <Select
@@ -94,7 +94,7 @@ export default function OnboardingPage() {
         )}
         {step === 1 && (
           <>
-            <h2 className="text-xl font-semibold text-headline mb-4">
+            <h2 className="text-type-h3 font-semibold text-headline mb-4">
               Preferred distance/location
             </h2>
             <Select
@@ -107,7 +107,7 @@ export default function OnboardingPage() {
         )}
         {step === 2 && (
           <>
-            <h2 className="text-xl font-semibold text-headline mb-4">
+            <h2 className="text-type-h3 font-semibold text-headline mb-4">
               Hobbies and interests (select multiple)
             </h2>
             <div className="flex flex-wrap gap-2">
@@ -124,31 +124,31 @@ export default function OnboardingPage() {
         )}
         {step === 3 && (
           <>
-            <h2 className="text-xl font-semibold text-headline mb-4">
+            <h2 className="text-type-h3 font-semibold text-headline mb-4">
               Anything else that matters to you
             </h2>
             <textarea
               value={preferences}
               onChange={(e) => setPreferences(e.target.value)}
               placeholder="e.g. Values communication, extroverted..."
-              className="w-full px-4 py-3 rounded-card bg-dark-base text-body border border-divider focus:border-accent-primary focus:outline-none placeholder:text-body-secondary min-h-[120px]"
+              className="w-full px-4 py-3 rounded-card bg-dark-base text-type-body text-body border border-divider focus:border-accent-primary focus:outline-none placeholder:text-body-secondary min-h-[120px]"
             />
           </>
         )}
         {step === 4 && (
           <div className="bg-card-dark rounded-card p-6 space-y-4">
-            <h2 className="text-lg font-semibold text-headline">Summary</h2>
-            <p className="text-body-secondary">
+            <h2 className="text-type-h3 font-semibold text-headline">Summary</h2>
+            <p className="text-type-body-sm text-body-secondary">
               Relationship: {relationshipOptions.find((o) => o.value === relationshipType)?.label ?? "-"}
             </p>
-            <p className="text-body-secondary">
+            <p className="text-type-body-sm text-body-secondary">
               Distance: {distanceOptions.find((o) => o.value === distance)?.label ?? "-"}
             </p>
-            <p className="text-body-secondary">
+            <p className="text-type-body-sm text-body-secondary">
               Hobbies: {hobbies.length ? hobbies.join(", ") : "-"}
             </p>
             {preferences && (
-              <p className="text-body-secondary">Additional: {preferences}</p>
+              <p className="text-type-body-sm text-body-secondary">Additional: {preferences}</p>
             )}
           </div>
         )}
@@ -168,7 +168,7 @@ export default function OnboardingPage() {
         onClose={() => setShowExitConfirm(false)}
         title="Leave onboarding?"
       >
-        <p className="text-body mb-6">
+        <p className="text-type-body mb-6">
           Your progress will not be saved if you leave. Continue?
         </p>
         <div className="flex gap-4">

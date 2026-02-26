@@ -29,7 +29,7 @@
   }
 
   body {
-    @apply bg-canvas text-body antialiased;
+    @apply bg-canvas text-body antialiased text-type-body;
     background-color: var(--canvas);
     min-height: 100vh;
   }
@@ -58,4 +58,15 @@
   .focus-ring {
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
   }
+
+  /* 타이포그래피 유틸: 제목/소제목/본문 일관 적용 */
+  .type-display { @apply font-display text-type-display-lg font-bold text-headline; }
+  .type-title { @apply font-display text-type-h1 font-bold text-headline; }
+  .type-subtitle { @apply font-display text-type-h2 font-bold text-headline; }
+  .type-section { @apply font-display text-type-h3 font-semibold text-headline; }
+  .type-body { @apply text-type-body text-body; }
+  .type-body-lg { @apply text-type-body-lg text-body; }
+  .type-body-sm { @apply text-type-body-sm text-body-secondary; }
+  .type-caption { @apply text-type-caption text-body-secondary; }
+  .type-caption-uppercase { @apply text-type-caption-sm text-body-secondary uppercase tracking-type-wider; }
 }

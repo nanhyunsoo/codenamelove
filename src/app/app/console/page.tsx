@@ -48,13 +48,13 @@ function ConsoleContent() {
         {activeTab === "build" && (
           <div className="space-y-6 max-w-2xl">
             <Card variant="elevated">
-              <h3 className="text-lg font-semibold text-headline mb-4">
+              <h3 className="text-type-h3 font-semibold text-headline mb-4">
                 Agent settings
               </h3>
-              <p className="text-body-secondary text-sm mb-4">
+              <p className="text-type-body-sm text-body-secondary mb-4">
                 Preferences from onboarding are applied to the Agent.
               </p>
-              <div className="text-body-secondary text-sm">
+              <div className="text-type-body-sm text-body-secondary">
                 <p>• Relationship: Long-term</p>
                 <p>• Distance: Same city</p>
                 <p>• Hobbies: Cooking, Reading, Travel</p>
@@ -66,10 +66,10 @@ function ConsoleContent() {
         {activeTab === "train" && (
           <div className="space-y-6">
             <Card variant="elevated">
-              <h3 className="text-lg font-semibold text-headline mb-4">
+              <h3 className="text-type-h3 font-semibold text-headline mb-4">
                 Run training
               </h3>
-              <p className="text-body-secondary text-sm mb-4">
+              <p className="text-type-body-sm text-body-secondary mb-4">
                 The Agent learns from your preference data. Takes about 5–10 minutes.
               </p>
               <Button onClick={() => setTrainConfirmOpen(true)}>
@@ -77,10 +77,10 @@ function ConsoleContent() {
               </Button>
             </Card>
             <Card variant="elevated">
-              <h3 className="text-lg font-semibold text-headline mb-4">
+              <h3 className="text-type-h3 font-semibold text-headline mb-4">
                 Logs
               </h3>
-              <div className="space-y-2 font-mono text-sm">
+              <div className="space-y-2 font-mono text-type-body-sm">
                 {mockConsoleLogs.map((log) => (
                   <div
                     key={log.id}
@@ -103,10 +103,10 @@ function ConsoleContent() {
         {activeTab === "deploy" && (
           <div className="space-y-6">
             <Card variant="elevated">
-              <h3 className="text-lg font-semibold text-headline mb-4">
+              <h3 className="text-type-h3 font-semibold text-headline mb-4">
                 Deploy
               </h3>
-              <p className="text-body-secondary text-sm mb-4">
+              <p className="text-type-body-sm text-body-secondary mb-4">
                 Deploy the Agent to use it for partner search. Confirm sharing scope and permissions.
               </p>
               <Button
@@ -116,7 +116,7 @@ function ConsoleContent() {
                 {deployed ? "Deployed" : "Deploy"}
               </Button>
               {deployed && (
-                <p className="mt-2 text-accent-primary text-sm font-medium">
+                <p className="mt-2 text-type-body-sm text-accent-primary font-medium">
                   Deploy complete. Share link generated.
                 </p>
               )}
@@ -130,7 +130,7 @@ function ConsoleContent() {
         onClose={() => setTrainConfirmOpen(false)}
         title="Confirm Train"
       >
-        <p className="text-body mb-6">
+        <p className="text-type-body mb-6">
           Running training will use resources and time. Continue?
         </p>
         <div className="flex gap-4">
@@ -152,7 +152,7 @@ function ConsoleContent() {
         onClose={() => setDeployConfirmOpen(false)}
         title="Confirm Deploy"
       >
-        <p className="text-body mb-6">
+        <p className="text-type-body mb-6">
           Sharing scope: Personal. Permissions: Search & match.
         </p>
         <div className="flex gap-4">
@@ -179,7 +179,7 @@ export default function ConsolePage() {
       title="Agent Console"
       statusBadge="Deployed"
     >
-      <Suspense fallback={<div className="text-body-secondary">Loading...</div>}>
+      <Suspense fallback={<div className="text-type-body-sm text-body-secondary">Loading...</div>}>
         <ConsoleContent />
       </Suspense>
     </AppShell>

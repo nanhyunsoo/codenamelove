@@ -22,7 +22,7 @@ export default function SettingsPage() {
 
       <div className="mt-8 max-w-xl space-y-6">
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-4">Theme</h3>
+          <h3 className="text-type-h3 font-semibold text-headline mb-4">Theme</h3>
           <Select
             label="Display mode"
             options={[
@@ -35,13 +35,13 @@ export default function SettingsPage() {
         </Card>
 
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-4">Notifications</h3>
+          <h3 className="text-type-h3 font-semibold text-headline mb-4">Notifications</h3>
           <div className="space-y-2">
-            <label className="flex items-center gap-2 text-body">
+            <label className="flex items-center gap-2 text-type-body">
               <input type="checkbox" defaultChecked className="rounded" />
               Training complete
             </label>
-            <label className="flex items-center gap-2 text-body">
+            <label className="flex items-center gap-2 text-type-body">
               <input type="checkbox" defaultChecked className="rounded" />
               Match recommendations
             </label>
@@ -49,7 +49,7 @@ export default function SettingsPage() {
         </Card>
 
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-4">
+          <h3 className="text-type-h3 font-semibold text-headline mb-4">
             Profile & preferences
           </h3>
           <Input label="Name" placeholder="Your name" />

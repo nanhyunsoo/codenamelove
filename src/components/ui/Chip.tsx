@@ -37,7 +37,7 @@ export default function Chip({
       tabIndex={clickable && !disabled ? 0 : undefined}
       className={`
         inline-flex items-center gap-1.5 px-4 py-2 rounded-pill
-        border border-chip-border text-chip-text font-medium
+        border border-chip-border text-type-body-sm text-chip-text font-medium
         transition-colors focus-ring
         ${
           selected

@@ -19,16 +19,13 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <div className="bg-dark-base rounded-hero p-14 text-center">
-      <h1
-        className="font-display text-4xl md:text-6xl font-bold text-headline mb-6"
-        style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
-      >
+      <h1 className="type-display mb-6">
         Let your Agent find the best Partner for you.
       </h1>
-      <p className="text-xl md:text-2xl text-body mb-4">
+      <p className="type-body-lg text-body mb-4">
         Your AI talks. You meet.
       </p>
-      <p className="text-body-secondary mb-12">
+      <p className="type-body-sm mb-12">
         AI-powered matchmaking through Agent negotiation.
       </p>
       <div className="h-px bg-divider my-8 max-w-md mx-auto" />

@@ -58,7 +58,7 @@ export default function WaitlistAdminPage() {
       <div className="mt-8 space-y-6">
         {/* 필터 */}
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-4">Filter</h3>
+          <h3 className="text-type-h3 font-semibold text-headline mb-4">Filter</h3>
           <div className="grid md:grid-cols-4 gap-4">
             <Input
               label="Search email"
@@ -98,26 +98,26 @@ export default function WaitlistAdminPage() {
         {/* 통계 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card variant="elevated">
-            <p className="text-body-secondary text-sm">Total</p>
-            <p className="text-2xl font-bold text-headline">
+            <p className="text-type-body-sm text-body-secondary">Total</p>
+            <p className="text-type-h2 font-bold text-headline">
               {mockWaitlistUsers.length}
             </p>
           </Card>
           <Card variant="elevated">
-            <p className="text-body-secondary text-sm">Waiting</p>
-            <p className="text-2xl font-bold text-headline">
+            <p className="text-type-body-sm text-body-secondary">Waiting</p>
+            <p className="text-type-h2 font-bold text-headline">
               {mockWaitlistUsers.filter((u) => u.status === "waiting").length}
             </p>
           </Card>
           <Card variant="elevated">
-            <p className="text-body-secondary text-sm">Invited</p>
-            <p className="text-2xl font-bold text-headline">
+            <p className="text-type-body-sm text-body-secondary">Invited</p>
+            <p className="text-type-h2 font-bold text-headline">
               {mockWaitlistUsers.filter((u) => u.status === "invited").length}
             </p>
           </Card>
           <Card variant="elevated">
-            <p className="text-body-secondary text-sm">Excluded</p>
-            <p className="text-2xl font-bold text-headline">
+            <p className="text-type-body-sm text-body-secondary">Excluded</p>
+            <p className="text-type-h2 font-bold text-headline">
               {mockWaitlistUsers.filter((u) => u.status === "excluded").length}
             </p>
           </Card>
@@ -125,28 +125,28 @@ export default function WaitlistAdminPage() {
 
         {/* 리스트 */}
         <Card variant="elevated">
-          <h3 className="text-lg font-semibold text-headline mb-4">
+          <h3 className="text-type-h3 font-semibold text-headline mb-4">
             Waitlist ({filtered.length})
           </h3>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full text-type-body-sm">
               <thead>
                 <tr className="border-b border-divider text-left">
-                  <th className="py-3 px-4 text-body-secondary">Email</th>
-                  <th className="py-3 px-4 text-body-secondary">Source</th>
-                  <th className="py-3 px-4 text-body-secondary">Status</th>
-                  <th className="py-3 px-4 text-body-secondary">Intent</th>
-                  <th className="py-3 px-4 text-body-secondary">Actions</th>
+                  <th className="py-3 px-4 text-type-body-sm text-body-secondary">Email</th>
+                  <th className="py-3 px-4 text-type-body-sm text-body-secondary">Source</th>
+                  <th className="py-3 px-4 text-type-body-sm text-body-secondary">Status</th>
+                  <th className="py-3 px-4 text-type-body-sm text-body-secondary">Intent</th>
+                  <th className="py-3 px-4 text-type-body-sm text-body-secondary">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {filtered.map((u) => (
                   <tr key={u.id} className="border-b border-divider/50">
-                    <td className="py-3 px-4 text-body">{u.email}</td>
-                    <td className="py-3 px-4 text-body-secondary">{u.source}</td>
+                    <td className="py-3 px-4 text-type-body text-body">{u.email}</td>
+                    <td className="py-3 px-4 text-type-body-sm text-body-secondary">{u.source}</td>
                     <td className="py-3 px-4">
                       <span
-                        className={`px-2 py-1 rounded-pill text-xs ${
+                        className={`px-2 py-1 rounded-pill text-type-caption ${
                           u.status === "invited"
                             ? "bg-accent-primary/20 text-accent-primary"
                             : u.status === "excluded"
@@ -157,12 +157,12 @@ export default function WaitlistAdminPage() {
                         {u.status}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-body-secondary">
+                    <td className="py-3 px-4 text-type-body-sm text-body-secondary">
                       {u.relationship_intent ?? "-"}
                     </td>
                     <td className="py-3 px-4">
                       <select
-                        className="bg-card-dark text-body rounded px-2 py-1 text-xs"
+                        className="bg-card-dark text-type-body text-body rounded px-2 py-1 text-type-caption"
                         value={u.status}
                         onChange={(e) => {
                           const v = e.target.value as

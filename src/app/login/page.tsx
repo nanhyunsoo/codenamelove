@@ -33,13 +33,10 @@ export default function LoginPage() {
     <main className="min-h-screen flex items-center justify-center p-6">
       <div className="w-full max-w-md">
         <div className="bg-dark-base rounded-hero p-8 md:p-12 shadow-elevation-2">
-          <h1
-            className="font-display text-2xl font-bold text-headline mb-2 text-center"
-            style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
-          >
+          <h1 className="font-display text-type-h2 font-bold text-headline mb-2 text-center">
             Sign in
           </h1>
-          <p className="text-body-secondary text-sm text-center mb-8">
+          <p className="text-type-body-sm text-body-secondary text-center mb-8">
             Sign in with Moltbook Agent API
           </p>
 
@@ -60,7 +57,7 @@ export default function LoginPage() {
               placeholder="••••••••"
             />
             {error && (
-              <p className="text-sm text-red-400">{error}</p>
+              <p className="text-type-body-sm text-red-400">{error}</p>
             )}
             <Button
               type="submit"
@@ -71,7 +68,7 @@ export default function LoginPage() {
             </Button>
           </form>
 
-          <p className="mt-6 text-center text-body-secondary text-sm">
+          <p className="mt-6 text-center text-type-body-sm text-body-secondary">
             <Link href="/" className="text-body hover:text-headline transition-colors">
               ← Back to Landing
             </Link>

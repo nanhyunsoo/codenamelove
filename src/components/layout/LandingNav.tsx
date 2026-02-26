@@ -26,7 +26,7 @@ export default function LandingNav() {
       >
         <Link
           href="/"
-          className="text-lg font-semibold text-nav-text hover:text-nav-text-hover transition-colors"
+          className="text-type-body-lg font-semibold text-nav-text hover:text-nav-text-hover transition-colors"
         >
           CodenameLove
         </Link>
@@ -36,7 +36,7 @@ export default function LandingNav() {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className="text-nav-text hover:text-nav-text-hover hover:underline transition-colors"
+                className="text-type-body text-nav-text hover:text-nav-text-hover hover:underline transition-colors"
               >
                 {link.label}
               </Link>
@@ -47,13 +47,13 @@ export default function LandingNav() {
         <div className="flex items-center gap-4">
           <Link
             href="/login"
-            className="text-nav-text hover:text-nav-text-hover hover:underline transition-colors"
+            className="text-type-body text-nav-text hover:text-nav-text-hover hover:underline transition-colors"
           >
             Login
           </Link>
           <Link
             href="/#waitlist"
-            className="rounded-pill bg-cta-dark text-white px-[18px] py-2.5 text-sm font-medium hover:bg-cta-dark-hover transition-colors"
+            className="rounded-pill bg-cta-dark text-white px-[18px] py-2.5 text-type-body-sm font-medium hover:bg-cta-dark-hover transition-colors"
           >
             Join Waitlist
           </Link>

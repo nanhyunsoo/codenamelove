@@ -21,7 +21,7 @@ export default function Input({
       {label && (
         <label
           htmlFor={inputId}
-          className="block text-sm text-body-secondary"
+          className="block text-type-body-sm text-body-secondary"
         >
           {label}
         </label>
@@ -29,7 +29,7 @@ export default function Input({
       <input
         id={inputId}
         className={`
-          w-full px-4 py-3 rounded-card bg-dark-base text-body 
+          w-full px-4 py-3 rounded-card bg-dark-base text-type-body text-body
           border border-divider focus:border-accent-primary focus:outline-none
           placeholder:text-body-secondary transition-colors focus-ring
           ${error ? "border-red-500" : ""} ${className}
@@ -45,12 +45,12 @@ export default function Input({
         {...props}
       />
       {error && (
-        <p id={`${inputId}-error`} className="text-sm text-red-400">
+        <p id={`${inputId}-error`} className="text-type-body-sm text-red-400">
           {error}
         </p>
       )}
       {helperText && !error && (
-        <p id={`${inputId}-helper`} className="text-sm text-body-secondary">
+        <p id={`${inputId}-helper`} className="text-type-body-sm text-body-secondary">
           {helperText}
         </p>
       )}
