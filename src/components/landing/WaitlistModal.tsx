@@ -21,6 +21,7 @@ export default function WaitlistModal({
 }: WaitlistModalProps) {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [wantsUpdate, setWantsUpdate] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,6 +36,7 @@ export default function WaitlistModal({
 
   const handleClose = () => {
     setEmail("");
+    setWantsUpdate(false);
     onResultDismiss?.();
     onClose();
   };
@@ -70,6 +72,17 @@ export default function WaitlistModal({
             placeholder="you@example.com"
             required
           />
+          <label className="flex items-start gap-2 text-type-body-sm cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={wantsUpdate}
+              onChange={(e) => setWantsUpdate(e.target.checked)}
+              className="mt-1 h-4 w-4 rounded border-border bg-transparent text-electricPurple focus:ring-electricPurple"
+            />
+            <span className="text-type-body">
+              Be the first to know what's coming next.
+            </span>
+          </label>
           <div className="flex gap-3 pt-2">
             <Button
               type="button"
