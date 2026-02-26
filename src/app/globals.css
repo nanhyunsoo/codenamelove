@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --deep-navy: #0a0e1a;
+    --electric-purple: #7c3aed;
+    --neon-pink: #ec4899;
+    --neon-cyan: #22d3ee;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+
+  body {
+    @apply bg-deepNavy text-white antialiased;
+    background: linear-gradient(135deg, #0a0e1a 0%, #1e1b4b 30%, #312e81 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Glassmorphism card */
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl border border-white/10 rounded-2xl;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3),
+      0 0 40px rgba(236, 72, 153, 0.2);
+  }
+}
