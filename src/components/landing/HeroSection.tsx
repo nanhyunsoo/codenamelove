@@ -20,10 +20,10 @@ export default function HeroSection({
   return (
     <div className="bg-dark-base rounded-hero p-14 text-center">
       <h1 className="type-display mb-6">
-        Let your Agent find the best Partner for you.
+        Let your Agent find the one
       </h1>
       <p className="type-body-lg text-body mb-4">
-        Your AI talks. You meet.
+        Stop swiping, Stop endless chat. Let your agent find your perfect fit.
       </p>
       <p className="type-body-sm mb-12">
         AI-powered matchmaking through Agent negotiation.
