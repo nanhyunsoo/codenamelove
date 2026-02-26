@@ -2,32 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+/* design.json 기반 전역 스타일 */
 @layer base {
   :root {
-    --deep-navy: #0a0e1a;
-    --electric-purple: #7c3aed;
-    --neon-pink: #ec4899;
-    --neon-cyan: #22d3ee;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --canvas: #0E0E0F;
+    --content-frame: #D9CFBD;
+    --dark-base: #0F0F10;
+    --headline: #E7DFC9;
+    --body: #CFC6B4;
+    --body-secondary: #A79F90;
+    --accent-primary: #F05A28;
+    --accent-hover: #FF6A3A;
+    --accent-active: #D94F20;
+    --accent-disabled: #A8644A;
+    --accent-disabled-text: #3A2A24;
+    --radius-frame: 28px;
+    --radius-hero: 20px;
+    --radius-card: 16px;
+    --radius-pill: 999px;
+    --elevation-1: 0 4px 12px rgba(0,0,0,0.2);
+    --elevation-2: 0 8px 24px rgba(0,0,0,0.25);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-deepNavy text-white antialiased;
-    background: linear-gradient(135deg, #0a0e1a 0%, #1e1b4b 30%, #312e81 100%);
+    @apply bg-canvas text-body antialiased;
+    background-color: var(--canvas);
     min-height: 100vh;
   }
 }
 
-/* Glassmorphism card */
 @layer components {
-  .glass-card {
-    @apply backdrop-blur-xl border border-white/10 rounded-2xl;
-    background: rgba(255, 255, 255, 0.05);
+  /* Hero 패널: dark surface, no shadow on hero itself */
+  .hero-panel {
+    @apply bg-dark-base rounded-hero p-14;
+    color: var(--headline);
   }
 
-  .neon-glow {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3),
-      0 0 40px rgba(236, 72, 153, 0.2);
+  /* 플로팅 카드: elevation 적용 */
+  .card-elevated {
+    @apply bg-dark-base rounded-card p-5;
+    box-shadow: var(--elevation-2);
+  }
+
+  /* Input card 스타일 */
+  .input-card {
+    @apply bg-input-card text-input-card-text rounded-card p-5;
+    box-shadow: var(--elevation-2);
+  }
+
+  /* 포커스 링 (접근성) */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
   }
 }

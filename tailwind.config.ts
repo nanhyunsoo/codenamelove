@@ -1,5 +1,9 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * design.json 기반 Tailwind 테마 토큰화
+ * 색상/라운드/섀도/타이포그래피 스케일을 theme로 매핑
+ */
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,32 +13,58 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        deepNavy: "#0a0e1a",
-        electricPurple: "#7c3aed",
-        neonPink: "#ec4899",
-        neonCyan: "#22d3ee",
+        /* Global canvas & frame */
+        canvas: "#0E0E0F",
+        "content-frame": "#D9CFBD",
+        "dark-base": "#0F0F10",
+        /* Typography */
+        headline: "#E7DFC9",
+        body: "#CFC6B4",
+        "body-secondary": "#A79F90",
+        "nav-text": "#1A1A1A",
+        "nav-text-hover": "#000000",
+        /* CTA & Accent */
+        "accent-primary": "#F05A28",
+        "accent-hover": "#FF6A3A",
+        "accent-active": "#D94F20",
+        "accent-disabled": "#A8644A",
+        "accent-disabled-text": "#3A2A24",
+        /* Buttons */
+        "cta-dark": "#111111",
+        "cta-dark-hover": "#000000",
+        /* Cards & Surfaces */
+        "card-dark": "#1C1C1F",
+        "card-dark-hover": "#2A2A2E",
+        "input-card": "#E6DDC8",
+        "input-card-text": "#4A463E",
+        "chip-default": "#EFE6D2",
+        "chip-border": "#D5CCB8",
+        "chip-text": "#3F3A32",
+        /* Divider */
+        divider: "#2A2A2C",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-hero":
-          "linear-gradient(135deg, #0a0e1a 0%, #1e1b4b 50%, #312e81 100%)",
+      borderRadius: {
+        frame: "28px",
+        hero: "20px",
+        card: "16px",
+        pill: "999px",
       },
-      animation: {
-        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
-        float: "float 6s ease-in-out infinite",
+      boxShadow: {
+        "elevation-1": "0 4px 12px rgba(0,0,0,0.2)",
+        "elevation-2": "0 8px 24px rgba(0,0,0,0.25)",
+        "cta-primary": "0 6px 16px rgba(240,90,40,0.35)",
+        avatar: "0 4px 12px rgba(0,0,0,0.35)",
+        "integration-icon": "0 6px 18px rgba(0,0,0,0.3)",
       },
-      keyframes: {
-        "glow-pulse": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.7" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
+      fontFamily: {
+        display: ["Playfair Display", "Didot", "serif"],
+        sans: ["Inter", "SF Pro", "system-ui", "sans-serif"],
       },
-      backdropBlur: {
-        xs: "2px",
+      spacing: {
+        "content-padding": "32px",
+        "hero-padding": "56px",
+        "header-cta-padding": "10px 18px",
+        "primary-cta-padding": "14px 28px",
       },
     },
   },

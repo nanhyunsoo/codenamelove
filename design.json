@@ -1,0 +1,200 @@
+{
+    "designSystem": {
+      "globalStyles": {
+        "backgroundCanvas": {
+          "baseColor": "#0E0E0F",
+          "contentFrameColor": "#D9CFBD",
+          "contentFrameRadius": "28px",
+          "contentFramePadding": "32px",
+          "notes": "Outer dark canvas (#0E0E0F) with centered warm beige container (#D9CFBD). Container has large radius and no visible border."
+        },
+        "typography": {
+          "primaryDisplay": {
+            "fontFamily": "High-contrast serif (Didot/Playfair style)",
+            "color": "#E7DFC9",
+            "usage": "Hero headline only",
+            "contrastRatioApprox": "≈12:1 on #0F0F10"
+          },
+          "bodyText": {
+            "fontFamily": "Modern sans-serif (Inter/SF Pro style)",
+            "color": "#CFC6B4",
+            "secondaryColor": "#A79F90",
+            "usage": "Descriptions, metadata"
+          },
+          "navigationText": {
+            "color": "#1A1A1A",
+            "hoverColor": "#000000",
+            "usage": "Top navigation inside beige header"
+          }
+        }
+      },
+      "componentStyles": {
+        "headerNavigation": {
+          "containerColor": "#D9CFBD",
+          "textColor": "#1A1A1A",
+          "ctaButton": {
+            "surfaceColor": "#111111",
+            "textColor": "#FFFFFF",
+            "radius": "999px",
+            "padding": "10px 18px",
+            "hoverSurface": "#000000",
+            "shadow": "none"
+          },
+          "secondaryLink": {
+            "color": "#1A1A1A",
+            "hoverUnderline": true
+          }
+        },
+        "heroPanel": {
+          "surfaceColor": "#0F0F10",
+          "radius": "20px",
+          "shadow": "none",
+          "padding": "56px",
+          "textHierarchy": {
+            "headlineColor": "#E7DFC9",
+            "bodyColor": "#CFC6B4",
+            "metaColor": "#A79F90"
+          },
+          "dividerLine": {
+            "color": "#2A2A2C",
+            "thickness": "1px"
+          }
+        },
+        "primaryCTA": {
+          "surfaceColor": "#F05A28",
+          "textColor": "#111111",
+          "radius": "999px",
+          "padding": "14px 28px",
+          "shadow": "0 6px 16px rgba(240,90,40,0.35)",
+          "interactionStates": {
+            "hoverSurface": "#FF6A3A",
+            "activeSurface": "#D94F20",
+            "disabledSurface": "#A8644A",
+            "disabledText": "#3A2A24"
+          }
+        },
+        "secondaryTextLink": {
+          "color": "#CFC6B4",
+          "hoverColor": "#FFFFFF"
+        },
+        "agentControlTabs": {
+          "containerStyle": "transparent",
+          "tabDefault": {
+            "surfaceColor": "#1C1C1F",
+            "textColor": "#CFC6B4",
+            "radius": "999px",
+            "padding": "8px 18px"
+          },
+          "tabActive": {
+            "surfaceColor": "#F05A28",
+            "textColor": "#111111"
+          }
+        },
+        "inputCard": {
+          "surfaceColor": "#E6DDC8",
+          "textColor": "#4A463E",
+          "radius": "16px",
+          "padding": "20px",
+          "shadow": "0 8px 24px rgba(0,0,0,0.25)",
+          "buttonChips": {
+            "surfaceColor": "#EFE6D2",
+            "borderColor": "#D5CCB8",
+            "textColor": "#3F3A32",
+            "radius": "999px",
+            "hoverSurface": "#FFFFFF"
+          }
+        },
+        "avatarGroup": {
+          "imageShape": "circle",
+          "borderColor": "#0F0F10",
+          "borderWidth": "4px",
+          "overlapSpacing": "-12px",
+          "shadow": "0 4px 12px rgba(0,0,0,0.35)"
+        },
+        "integrationIcons": {
+          "containerShape": "circle",
+          "surfaceColor": "#1C1C1F",
+          "iconColor": "brand-native",
+          "radius": "50%",
+          "shadow": "0 6px 18px rgba(0,0,0,0.3)",
+          "hoverSurface": "#2A2A2E"
+        },
+        "brandStrip": {
+          "containerColor": "#D9CFBD",
+          "logoColor": "#1A1A1A",
+          "opacity": 1
+        }
+      },
+      "visualEffects": {
+        "elevationModel": {
+          "level0": "No shadow (hero background)",
+          "level1": "0 4px 12px rgba(0,0,0,0.2)",
+          "level2": "0 8px 24px rgba(0,0,0,0.25)",
+          "rule": "Shadows applied to floating cards and circular integrations only, not to hero container."
+        },
+        "radiusSystem": {
+          "frame": "28px",
+          "heroPanel": "20px",
+          "cards": "16px",
+          "buttons": "999px (pill)",
+          "icons": "50%"
+        },
+        "colorRelationships": {
+          "accentPrimary": "#F05A28",
+          "darkBase": "#0F0F10",
+          "warmLight": "#D9CFBD",
+          "headlineLight": "#E7DFC9",
+          "rule": "Accent color reserved strictly for primary actions and active states. Warm beige never used inside dark hero except in elevated cards."
+        }
+      },
+      "stateArchitecture": {
+        "buttons": {
+          "default": {
+            "primary": "#F05A28",
+            "text": "#111111"
+          },
+          "hover": {
+            "primary": "#FF6A3A"
+          },
+          "active": {
+            "primary": "#D94F20"
+          },
+          "disabled": {
+            "primary": "#A8644A",
+            "text": "#3A2A24"
+          }
+        },
+        "tabs": {
+          "default": {
+            "surface": "#1C1C1F",
+            "text": "#CFC6B4"
+          },
+          "active": {
+            "surface": "#F05A28",
+            "text": "#111111"
+          }
+        },
+        "chips": {
+          "default": {
+            "surface": "#EFE6D2",
+            "text": "#3F3A32"
+          },
+          "hover": {
+            "surface": "#FFFFFF"
+          }
+        }
+      },
+      "implementationGuidelines": {
+        "avoid": [
+          "Do not apply beige container color (#D9CFBD) inside dark hero panel except for elevated cards.",
+          "Do not reuse primary CTA orange (#F05A28) for typography.",
+          "Do not apply shadows to the hero panel itself."
+        ],
+        "ensure": [
+          "Maintain high contrast between #E7DFC9 text and #0F0F10 background.",
+          "Use pill radius consistently for all interactive buttons.",
+          "Preserve shadow hierarchy for floating components only."
+        ]
+      }
+    }
+  }
