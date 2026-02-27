@@ -1,6 +1,4 @@
-\"use client\";
-
-import Image from \"next/image\";
+import Image from "next/image";
 
 /**
  * Core Features - Service example UIs
@@ -31,80 +29,74 @@ export default function FeaturesSection() {
               className="bg-input-card rounded-card p-6 shadow-elevation-2 text-input-card-text text-type-body"
               style={{ minHeight: "220px" }}
             >
-              {/* 상단 헤더 영역 */}
-              <div className="flex items-start justify-between gap-4 mb-5">
-                <div>
-                  <p className="text-type-body-sm font-medium text-chip-text mb-1">
-                    Onboarding
-                  </p>
-                  <p className="text-type-body-sm text-body/80">
-                    Tell your Agent what kind of relationship and location you&apos;re
-                    interested in. We&apos;ll use this to find better matches.
-                  </p>
-                </div>
+              {/* 상단 오른쪽 Step 배지 */}
+              <div className="flex justify-end mb-4">
                 <div className="inline-flex items-center gap-2 rounded-pill bg-chip-default px-3 py-1 text-type-caption text-chip-text">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent-primary" />
                   <span>Step 1 · Preferences</span>
                 </div>
               </div>
 
-              {/* 본문: 왼쪽 Relationship, 오른쪽 Location */}
-              <div className="grid gap-5 md:grid-cols-[minmax(0,2fr)_minmax(0,1.4fr)]">
+              {/* 본문: 왼쪽 Relationship 타입, 오른쪽 Location 영역 */}
+              <div className="grid gap-8 md:grid-cols-2">
+                {/* 왼쪽 - Relationship types */}
                 <div>
-                  <p className="type-caption mb-2">Relationship goal</p>
-                  <div className="grid gap-3 md:grid-cols-3">
+                  <p className="text-type-body-sm font-medium mb-4">
+                    What kind of relationship are you looking for?
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {[
-                      {
-                        label: "Long-term",
-                        desc: "Serious, future‑oriented",
-                        selected: true,
-                      },
-                      {
-                        label: "Dating",
-                        desc: "See where it goes",
-                      },
-                      {
-                        label: "Short-term",
-                        desc: "Casual for now",
-                      },
-                    ].map((opt) => (
+                      "Committed Relationship",
+                      "Casual Dating",
+                      "Social Circle Expansion",
+                      "Still Exploring",
+                      "Serious, but Open",
+                      "Friendship First",
+                    ].map((label) => (
                       <button
-                        key={opt.label}
+                        key={label}
                         type="button"
-                        className={`text-left rounded-card border px-3 py-2.5 text-type-caption transition-colors ${
-                          opt.selected
-                            ? "bg-accent-primary/10 border-accent-primary text-accent-primary"
-                            : "bg-chip-default/60 border-chip-border hover:border-accent-primary/60"
-                        }`}
+                        className="flex items-center gap-2 rounded-pill bg-chip-default/80 px-3 py-2 text-type-body-sm text-body hover:bg-chip-default transition-colors"
                       >
-                        <div className="flex items-center justify-between gap-2 mb-1">
-                          <span className="font-semibold">{opt.label}</span>
-                          {opt.selected && (
-                            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent-primary text-[11px] text-cta-dark">
-                              ✓
-                            </span>
-                          )}
-                        </div>
-                        {opt.desc && (
-                          <p className="text-[11px] text-body/80">{opt.desc}</p>
-                        )}
+                        <span aria-hidden="true">❤️</span>
+                        <span className="text-left">{label}</span>
                       </button>
                     ))}
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-between gap-4">
+                {/* 오른쪽 - Location */}
+                <div className="space-y-6">
                   <div>
-                    <p className="type-caption mb-2">Location</p>
-                    <div className="inline-flex flex-wrap gap-2 rounded-pill bg-chip-default/60 px-1.5 py-1.5">
-                      {["Nearby", "Same city", "Global"].map((opt) => (
+                    <p className="text-type-body-sm font-medium mb-3">Location</p>
+                    <div className="space-y-2">
+                      <div>
+                        <p className="type-caption mb-1">My location</p>
+                        <div className="flex items-center gap-2 rounded-card bg-chip-default/60 px-3 py-2">
+                          <span aria-hidden="true">📍</span>
+                          <div className="flex-1 h-7 rounded-full bg-white/40" />
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        className="text-type-caption text-accent-primary underline underline-offset-2"
+                      >
+                        Use Current Location
+                      </button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="type-caption mb-2">Preference</p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Nearby", "Same City", "Country", "Global"].map((opt, index) => (
                         <button
                           key={opt}
                           type="button"
-                          className={`rounded-pill px-3 py-1 text-type-caption font-medium border transition-colors ${
-                            opt === "Nearby"
+                          className={`rounded-pill px-3 py-1.5 text-type-caption font-medium border transition-colors ${
+                            index === 0
                               ? "bg-accent-primary/10 border-accent-primary text-accent-primary"
-                              : "border-transparent text-body/80 hover:border-chip-border"
+                              : "border-chip-border/60 text-body/80 bg-chip-default/40 hover:bg-chip-default"
                           }`}
                         >
                           {opt}
@@ -112,10 +104,6 @@ export default function FeaturesSection() {
                       ))}
                     </div>
                   </div>
-                  <p className="text-[11px] text-body/70">
-                    Your Agent only shows people who match these settings. You can
-                    change them anytime in preferences.
-                  </p>
                 </div>
               </div>
             </div>
