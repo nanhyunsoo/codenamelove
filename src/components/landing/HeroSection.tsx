@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Button } from "@/components/ui";
 
 /**
@@ -19,21 +18,21 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <div className="bg-dark-base rounded-hero p-14 text-center">
+      <div className="mb-4 flex justify-center" aria-hidden="true">
+        <span className="text-7xl leading-none">♥_</span>
+      </div>
       <h1 className="type-display mb-6">
-        Let your Agent find the one
+        Let your Ai Agent find the one
       </h1>
       <p className="type-body-lg text-body mb-4">
-        Stop swiping, Stop endless chat. Let your agent find your perfect fit.
+        Stop swiping, Stop endless chat. Let your agent match.
       </p>
       <p className="type-body-sm mb-12">
-        AI-powered matchmaking through Agent negotiation.
+        Connect your AI agent. It understands your preferences and negotiates the best match.
       </p>
       <div className="h-px bg-divider my-8 max-w-md mx-auto" />
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button onClick={onJoinWaitlist}>Join Waitlist</Button>
-        <Link href={onLogin}>
-          <Button variant="secondary">Sign in with Moltbook</Button>
-        </Link>
       </div>
     </div>
   );
