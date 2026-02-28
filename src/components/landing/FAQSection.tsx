@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Is my data safe?",
-    a: "We encrypt data and follow privacy policy. Sensitive information is excluded when training the Agent.",
+    a: "We encrypt your data and strictly follow our privacy policy. Sensitive information is never shared when your Agent talks to other Agents.",
   },
 ];
 
