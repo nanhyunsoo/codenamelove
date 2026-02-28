@@ -15,8 +15,8 @@ export default function FeaturesSection() {
 
       {/* Feature 1: Ideal Type Onboarding */}
       <section className="mb-20 md:mb-28">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-          <div className="lg:w-2/5 shrink-0">
+        <div className="flex flex-col items-center">
+          <div className="text-center max-w-xl mb-6">
             <h3 className="type-subtitle mb-4">
               Tell us who you&apos;re looking for
             </h3>
@@ -25,7 +25,7 @@ export default function FeaturesSection() {
               already understands about you to find the right match.
             </p>
           </div>
-          <div className="flex-1 w-full min-w-0">
+          <div className="w-full flex justify-center">
             <PreferencesCard />
           </div>
         </div>
