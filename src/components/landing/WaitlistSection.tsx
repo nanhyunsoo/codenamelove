@@ -110,7 +110,6 @@ export default function WaitlistSection() {
           <div className="pt-2">
             <Button
               type="submit"
-              variant="secondary"
               disabled={isSubmitting}
               className="w-full rounded-card py-3"
             >
