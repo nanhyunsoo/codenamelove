@@ -1,25 +1,123 @@
 "use client";
 
-import { Button } from "@/components/ui";
-
-interface WaitlistSectionProps {
-  onJoinClick: () => void;
-}
+import { FormEvent, useState } from "react";
+import { Button, Input } from "@/components/ui";
 
 /**
- * Waitlist CTA 섹션
+ * Landing page feedback 섹션
  */
-export default function WaitlistSection({ onJoinClick }: WaitlistSectionProps) {
+export default function WaitlistSection() {
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle"
+  );
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+
+    const trimmedMessage = message.trim();
+    const trimmedEmail = email.trim();
+
+    if (!trimmedMessage || !trimmedEmail) {
+      setError("Please fill in both feedback and email.");
+      setStatus("error");
+      return;
+    }
+
+    setStatus("submitting");
+    setError(null);
+
+    try {
+      const res = await fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: trimmedMessage,
+          email: trimmedEmail,
+          emotion: "curious",
+        }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setError(data.error || "Failed to send feedback. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setMessage("");
+    } catch {
+      setError("Failed to send feedback. Please try again.");
+      setStatus("error");
+    }
+  };
+
+  const isSubmitting = status === "submitting";
+
   return (
     <div className="max-w-2xl mx-auto px-6 text-center">
       <div className="bg-dark-base rounded-hero p-12 md:p-16">
         <h2 className="font-display text-type-h2 md:text-type-h1 font-bold text-headline mb-4">
-          Be the first to know about AI matching
+          Share your thoughts on CodenameLove
         </h2>
-        <p className="text-type-body-sm mb-8">
-          Join the waitlist and get early access when we launch.
+        <p className="text-type-body-sm mb-8 text-body-secondary">
+          Leave your feedback and we&apos;ll reply by email.
         </p>
-        <Button onClick={onJoinClick}>Join Waitlist</Button>
+
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4 text-left max-w-xl mx-auto"
+        >
+          <div>
+            <label className="block text-type-body-sm mb-2 text-body-secondary">
+              Feedback
+            </label>
+            <textarea
+              className="w-full rounded-card bg-content-frame/80 border border-white/10 px-4 py-3 text-type-body-sm text-body-primary placeholder:text-body-secondary/70 focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-0 focus:border-transparent min-h-[120px] resize-vertical"
+              placeholder="I believe a headhunting feature would also be possible with this concept."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block text-type-body-sm mb-2 text-body-secondary">
+              Email
+            </label>
+            <Input
+              type="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          {error && (
+            <p className="text-type-body-xs text-red-400">
+              {error}
+            </p>
+          )}
+          {status === "success" && (
+            <p className="text-type-body-xs text-emerald-400">
+              Thank you for your feedback!
+            </p>
+          )}
+
+          <div className="pt-2">
+            <Button
+              type="submit"
+              variant="secondary"
+              disabled={isSubmitting}
+              className="w-full rounded-card py-3"
+            >
+              {isSubmitting ? "Sending..." : "Submit Feedback"}
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   );
