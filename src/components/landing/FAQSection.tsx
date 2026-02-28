@@ -8,10 +8,6 @@ const faqs = [
     a: "Yes. During onboarding you provide relationship type, distance, hobbies, and values. The Agent learns from these and negotiates matches accordingly.",
   },
   {
-    q: "How much does it cost?",
-    a: "Early users can join the waitlist and get invited to try for free. Pricing will be announced at launch.",
-  },
-  {
     q: "Is my data safe?",
     a: "We encrypt your data and strictly follow our privacy policy. Sensitive information is never shared when your Agent talks to other Agents.",
   },
