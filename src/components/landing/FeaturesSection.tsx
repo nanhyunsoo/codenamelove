@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PreferencesCard from "@/components/landing/PreferencesCard";
 
 /**
  * Core Features - Service example UIs
@@ -25,88 +26,7 @@ export default function FeaturesSection() {
             </p>
           </div>
           <div className="flex-1 w-full min-w-0">
-            <div
-              className="bg-input-card rounded-card p-6 shadow-elevation-2 text-input-card-text text-type-body"
-              style={{ minHeight: "220px" }}
-            >
-              {/* 상단 오른쪽 Step 배지 */}
-              <div className="flex justify-end mb-4">
-                <div className="inline-flex items-center gap-2 rounded-pill bg-chip-default px-3 py-1 text-type-caption text-chip-text">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-primary" />
-                  <span>Step 1 · Preferences</span>
-                </div>
-              </div>
-
-              {/* 본문: 왼쪽 Relationship 타입, 오른쪽 Location 영역 */}
-              <div className="grid gap-8 md:grid-cols-2">
-                {/* 왼쪽 - Relationship types */}
-                <div>
-                  <p className="text-type-body-sm font-medium mb-4">
-                    What kind of relationship are you looking for?
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {[
-                      "Committed Relationship",
-                      "Casual Dating",
-                      "Social Circle Expansion",
-                      "Still Exploring",
-                      "Serious, but Open",
-                      "Friendship First",
-                    ].map((label) => (
-                      <button
-                        key={label}
-                        type="button"
-                        className="flex items-center gap-2 rounded-pill bg-chip-default/80 px-3 py-2 text-type-body-sm text-body hover:bg-chip-default transition-colors"
-                      >
-                        <span aria-hidden="true">❤️</span>
-                        <span className="text-left">{label}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 오른쪽 - Location */}
-                <div className="space-y-6">
-                  <div>
-                    <p className="text-type-body-sm font-medium mb-3">Location</p>
-                    <div className="space-y-2">
-                      <div>
-                        <p className="type-caption mb-1">My location</p>
-                        <div className="flex items-center gap-2 rounded-card bg-chip-default/60 px-3 py-2">
-                          <span aria-hidden="true">📍</span>
-                          <div className="flex-1 h-7 rounded-full bg-white/40" />
-                        </div>
-                      </div>
-                      <button
-                        type="button"
-                        className="text-type-caption text-accent-primary underline underline-offset-2"
-                      >
-                        Use Current Location
-                      </button>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="type-caption mb-2">Preference</p>
-                    <div className="flex flex-wrap gap-2">
-                      {["Nearby", "Same City", "Country", "Global"].map((opt, index) => (
-                        <button
-                          key={opt}
-                          type="button"
-                          className={`rounded-pill px-3 py-1.5 text-type-caption font-medium border transition-colors ${
-                            index === 0
-                              ? "bg-accent-primary/10 border-accent-primary text-accent-primary"
-                              : "border-chip-border/60 text-body/80 bg-chip-default/40 hover:bg-chip-default"
-                          }`}
-                        >
-                          {opt}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <PreferencesCard />
           </div>
         </div>
       </section>
