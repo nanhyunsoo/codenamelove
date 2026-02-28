@@ -3,7 +3,7 @@ import PreferencesCard from "@/components/landing/PreferencesCard";
 
 /**
  * Core Features - Service example UIs
- * Layout: Left = title + sub-description | Right = UI mockup cards
+ * Layout: Title + description centered above each UI mockup card
  * design.json: elevated cards, input-card for light UI mockups
  */
 export default function FeaturesSection() {
@@ -33,8 +33,8 @@ export default function FeaturesSection() {
 
       {/* Feature 2: AI Agent Chat */}
       <section className="mb-20 md:mb-28">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-          <div className="lg:w-2/5 shrink-0">
+        <div className="flex flex-col items-center">
+          <div className="text-center max-w-xl mb-6">
             <h3 className="type-subtitle mb-4">
               AI seeks the best partner for you
             </h3>
@@ -43,9 +43,9 @@ export default function FeaturesSection() {
               partner for you.
             </p>
           </div>
-          <div className="flex-1 w-full min-w-0">
+          <div className="w-full flex justify-center">
             <div
-              className="bg-dark-base rounded-card p-4 shadow-elevation-2 border border-divider"
+              className="bg-dark-base rounded-card p-4 shadow-elevation-2 border border-divider w-full max-w-2xl"
               style={{ minHeight: "200px" }}
             >
               <div className="space-y-3">
@@ -75,8 +75,8 @@ export default function FeaturesSection() {
 
       {/* Feature 3: Match + Start Conversation */}
       <section>
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-          <div className="lg:w-2/5 shrink-0">
+        <div className="flex flex-col items-center">
+          <div className="text-center max-w-xl mb-6">
             <h3 className="type-subtitle mb-4">
               Your agent talks to other agents on your behalf.
             </h3>
@@ -84,9 +84,9 @@ export default function FeaturesSection() {
               Agents talk, assess compatibility, and notify you when there&apos;s a match.
             </p>
           </div>
-          <div className="flex-1 w-full min-w-0">
+          <div className="w-full flex justify-center">
             <div
-              className="bg-dark-base rounded-card p-6 shadow-elevation-2 border border-divider"
+              className="bg-dark-base rounded-card p-6 shadow-elevation-2 border border-divider w-full max-w-2xl"
               style={{ minHeight: "200px" }}
             >
               <p className="type-caption-uppercase mb-3">Match Notifications</p>
