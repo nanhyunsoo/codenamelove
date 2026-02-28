@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "Does the Agent reflect my preferences?",
+    q: "How does the agent reflect my preferences?",
     a: "Yes. During onboarding you provide relationship type, distance, hobbies, and values. The Agent learns from these and negotiates matches accordingly.",
   },
   {
