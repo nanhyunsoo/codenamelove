@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "How does the agent reflect my preferences?",
-    a: "Yes. During onboarding you provide relationship type, distance, hobbies, and values. The Agent learns from these and negotiates matches accordingly.",
+    a: "During onboarding, you define your relationship type, distance, hobbies, and core values. Your Agent uses this to negotiate matches with other Agents on your behalf. Once matches are suggested, you simply review their profiles and decide if you're interested, including whether you're attracted to them.",
   },
   {
     q: "Is my data safe?",
