@@ -112,48 +112,57 @@ export default function FeaturesSection() {
           </div>
           <div className="w-full flex justify-center">
             <div
-              className="bg-dark-base rounded-card p-6 shadow-elevation-2 border border-divider w-full max-w-2xl"
+              className="bg-dark-base rounded-card p-6 shadow-elevation-2 border border-divider w-full max-w-2xl text-headline"
               style={{ minHeight: "200px" }}
             >
-              <p className="type-caption-uppercase mb-3">Match Notifications</p>
-              <div className="flex items-start gap-4">
-                <div className="relative shrink-0">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-accent-primary/25">
-                    <Image
-                      src="/images/match-profile.png"
-                      alt="Matched profile"
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute -top-2 left-0 rounded-pill bg-cta-dark px-2 py-0.5 text-[11px] font-medium text-headline border border-accent-primary/60 shadow-elevation-2">
-                    Match in 1 days.
-                  </div>
-                  <div className="flex -space-x-2 mt-4">
-                    <div className="w-6 h-6 rounded-full bg-accent-primary/30 flex items-center justify-center text-[11px] text-accent-primary font-semibold">
-                      SJ
-                    </div>
-                    <div className="w-6 h-6 rounded-full bg-chip-default flex items-center justify-center text-[11px] text-chip-text font-semibold">
-                      MK
-                    </div>
-                    <div className="w-6 h-6 rounded-full bg-chip-default/70 flex items-center justify-center text-[11px] text-chip-text font-semibold">
-                      +2
-                    </div>
-                  </div>
+              {/* 헤더 */}
+              <p className="type-caption-uppercase mb-2">Match Notifications</p>
+              <div className="h-px bg-white/20 mb-5" />
+
+              {/* 프로필 + 설명 */}
+              <div className="flex gap-4 items-start mb-5">
+                <div className="w-14 h-14 rounded-full overflow-hidden bg-accent-primary/25 shrink-0">
+                  <Image
+                    src="/images/match-profile.png"
+                    alt="Matched profile"
+                    width={56}
+                    height={56}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="flex-1">
-                  <p className="text-type-body-sm text-body mb-3">
-                    Similar values (growth, family). Shared hobbies: cooking and travel.
-                    Compatible communication style for long-term conversations.
+                <div className="flex-1 min-w-0">
+                  <p className="text-type-body-sm text-body">
+                    Similar values (Growth, Family). Shared workfield in the IT
+                    industry, and has ~
                   </p>
-                  <button
-                    type="button"
-                    className="inline-flex items-center justify-center gap-2 rounded-pill bg-accent-primary text-cta-dark px-4 py-2.5 text-type-body-sm font-medium hover:bg-accent-hover transition-colors"
-                  >
-                    <span>Start conversation</span>
-                    <span aria-hidden="true">💬</span>
-                  </button>
+                </div>
+              </div>
+
+              {/* Best Similarities */}
+              <p className="text-type-body-sm font-semibold text-headline mb-2">
+                Best Similarities
+              </p>
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="text-type-caption text-body-secondary">
+                  # Work Domain
+                </span>
+                <span className="text-type-caption text-body-secondary">
+                  # Family
+                </span>
+                <span className="text-type-caption text-body-secondary">
+                  # Family
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 mb-5 text-type-caption text-body-secondary">
+                <span aria-hidden="true">📍</span>
+                <span>Location Sanfrancisco</span>
+              </div>
+
+              {/* CTA */}
+              <div className="flex justify-end">
+                <div className="inline-flex items-center gap-2 rounded-card bg-white/10 border border-white/15 px-4 py-2.5 text-type-body-sm text-headline">
+                  <span aria-hidden="true">📢</span>
+                  Start Conversation
                 </div>
               </div>
             </div>
