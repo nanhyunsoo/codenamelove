@@ -12,7 +12,7 @@ import WaitlistModal from "@/components/landing/WaitlistModal";
 export default function LandingPage() {
   const [waitlistModalOpen, setWaitlistModalOpen] = useState(false);
   const [waitlistResult, setWaitlistResult] = useState<
-    "success" | "duplicate" | "error" | null
+    "success" | "duplicate" | "error" | "unavailable" | null
   >(null);
 
   const handleWaitlistSubmit = async (email: string) => {
@@ -26,6 +26,8 @@ export default function LandingPage() {
       if (!res.ok) {
         if (res.status === 409 || data.error?.includes("duplicate")) {
           setWaitlistResult("duplicate");
+        } else if (res.status === 503) {
+          setWaitlistResult("unavailable");
         } else {
           setWaitlistResult("error");
         }

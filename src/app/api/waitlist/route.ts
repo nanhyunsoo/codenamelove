@@ -40,11 +40,44 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // .env.example placeholder 사용 시 연결 불가 → 503으로 안내
+    if (
+      url.includes("your-project.supabase.co") ||
+      key.includes("your-") ||
+      key === "your-anon-key" ||
+      key === "your-service-role-key"
+    ) {
+      console.error(
+        "[waitlist] Supabase placeholder env detected. Create a project at https://supabase.com and set real NEXT_PUBLIC_SUPABASE_URL and keys in .env.local (see .env.example)."
+      );
+      return NextResponse.json(
+        { error: "Supabase not configured", code: "PLACEHOLDER_ENV" },
+        { status: 503 }
+      );
+    }
+
     const supabase = createClient(url, key);
 
-    const { error } = await supabase.from("waitlist_users").insert({
-      email,
-    });
+    let result: { error: { code?: string; message?: string; details?: unknown } | null };
+    try {
+      result = await supabase.from("waitlist_users").insert({
+        email,
+      });
+    } catch (networkErr: unknown) {
+      const msg = networkErr instanceof Error ? networkErr.message : String(networkErr);
+      const cause = networkErr instanceof Error ? networkErr.cause : null;
+      console.error(
+        "[waitlist] Supabase connection failed (check URL/keys and network):",
+        msg,
+        cause ?? ""
+      );
+      return NextResponse.json(
+        { error: "Could not reach database", code: "NETWORK_ERROR" },
+        { status: 503 }
+      );
+    }
+
+    const { error } = result;
 
     if (error) {
       // 중복 이메일 (Postgres unique_violation)

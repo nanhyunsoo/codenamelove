@@ -7,8 +7,8 @@ interface WaitlistModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSubmit: (email: string) => Promise<void>;
-  /** 제출 결과: 성공/중복/실패 */
-  result?: "success" | "duplicate" | "error" | null;
+  /** 제출 결과: 성공/중복/실패/미설정(503) */
+  result?: "success" | "duplicate" | "error" | "unavailable" | null;
   onResultDismiss?: () => void;
 }
 
@@ -56,6 +56,13 @@ export default function WaitlistModal({
             This email is already registered.
           </p>
           <Button onClick={onResultDismiss}>Try again</Button>
+        </div>
+      ) : result === "unavailable" ? (
+        <div className="text-center py-4">
+          <p className="text-type-body text-amber-400 mb-4">
+            Waitlist is not configured yet. Set up Supabase in .env.local and try again.
+          </p>
+          <Button onClick={handleClose}>OK</Button>
         </div>
       ) : result === "error" ? (
         <div className="text-center py-4">
