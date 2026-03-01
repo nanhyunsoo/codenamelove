@@ -164,7 +164,7 @@ export default function FeaturesSection() {
 
               {/* CTA */}
               <div className="flex justify-end">
-                <div className="inline-flex items-center gap-2 rounded-card bg-orange-500 border border-orange-400 px-4 py-2.5 text-type-body-sm text-white font-medium hover:bg-orange-600 transition-colors">
+                <div className="inline-flex items-center gap-2 rounded-pill bg-accent-primary text-cta-dark px-7 py-3.5 text-type-body-sm font-medium shadow-cta-primary hover:bg-accent-hover active:bg-accent-active transition-colors focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-2 focus:ring-offset-dark-base">
                   Start Conversation
                 </div>
               </div>
