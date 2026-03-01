@@ -6,7 +6,7 @@ import { Modal, Input, Button } from "@/components/ui";
 interface WaitlistModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (email: string, relationshipIntent?: string) => Promise<void>;
+  onSubmit: (email: string) => Promise<void>;
   /** 제출 결과: 성공/중복/실패 */
   result?: "success" | "duplicate" | "error" | null;
   onResultDismiss?: () => void;

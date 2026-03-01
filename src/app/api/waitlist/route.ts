@@ -3,13 +3,12 @@ import { createClient } from "@supabase/supabase-js";
 
 /**
  * POST /api/waitlist
- * - Waitlist 등록
- * - email (required), source (default: landing)
+ * - Waitlist 등록 (email만 저장)
  */
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email, relationship_intent, source = "landing" } = body;
+    const { email } = body;
 
     if (!email || typeof email !== "string") {
       return NextResponse.json(
@@ -33,8 +32,6 @@ export async function POST(request: NextRequest) {
 
     const { error } = await supabase.from("waitlist_users").insert({
       email: email.trim(),
-      relationship_intent: relationship_intent || null,
-      source: typeof source === "string" && source === "moltbook" ? "moltbook" : "landing",
     });
 
     if (error) {

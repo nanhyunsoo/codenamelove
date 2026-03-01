@@ -15,19 +15,12 @@ export default function LandingPage() {
     "success" | "duplicate" | "error" | null
   >(null);
 
-  const handleWaitlistSubmit = async (
-    email: string,
-    relationshipIntent?: string
-  ) => {
+  const handleWaitlistSubmit = async (email: string) => {
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          relationship_intent: relationshipIntent,
-          source: "landing",
-        }),
+        body: JSON.stringify({ email }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -67,9 +60,9 @@ export default function LandingPage() {
         <FAQSection />
       </section>
 
-      {/* Waitlist */}
+      {/* Feedback / Waitlist */}
       <section id="waitlist" className="py-16 md:py-24">
-        <WaitlistSection onJoinClick={() => setWaitlistModalOpen(true)} />
+        <WaitlistSection />
       </section>
 
       <Footer />
