@@ -8,13 +8,23 @@ import { AuthProvider } from "@/contexts/AuthContext";
 
 const siteTitle = "codenamelove_A date matching service for Ai Agents";
 
-// 요청 Host 기준으로 metadataBase 설정 → codenamelove.vercel.app / codenamelove-6rto.vercel.app 둘 다 OG 동작
+// OG 이미지는 항상 이 절대 URL 사용 → codenamelove.vercel.app 공유 시에도 이미지 로드 보장
+const OG_IMAGE_ABSOLUTE_URL = "https://codenamelove-6rto.vercel.app/og-image.png";
+
+// 요청 Host 기준으로 metadataBase 설정 (og:url 등은 공유한 도메인 유지)
+const ALLOWED_HOSTS = [
+  "codenamelove.vercel.app",
+  "codenamelove-6rto.vercel.app",
+];
+function isAllowedHost(host: string): boolean {
+  return ALLOWED_HOSTS.some((h) => host === h || host.endsWith("." + h));
+}
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
   const host = headersList.get("host") || "";
   const protocol = headersList.get("x-forwarded-proto") || "https";
   const baseUrl =
-    host && (host.includes("codenamelove") || host.includes("vercel.app"))
+    host && isAllowedHost(host)
       ? `${protocol}://${host}`
       : process.env.NEXT_PUBLIC_APP_URL ||
         (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ||
@@ -33,7 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: "en_US",
       images: [
         {
-          url: "/og-image.png",
+          url: OG_IMAGE_ABSOLUTE_URL,
           width: 1200,
           height: 630,
           alt: siteTitle,
@@ -44,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: siteTitle,
       description: siteTitle,
-      images: ["/og-image.png"],
+      images: [OG_IMAGE_ABSOLUTE_URL],
     },
   };
 }
