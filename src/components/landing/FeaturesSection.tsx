@@ -133,7 +133,9 @@ export default function FeaturesSection() {
                 <div className="flex-1 min-w-0">
                   <p className="text-type-body-sm text-body">
                     Similar values (Growth, Family). Shared workfield in the IT
-                    industry, and has ~
+                    industry, and has overlapping interests in design and
+                    creative collaboration. Strong alignment on communication
+                    style and lifestyle preferences.
                   </p>
                 </div>
               </div>
