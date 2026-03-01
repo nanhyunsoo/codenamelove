@@ -78,7 +78,7 @@ export default function WaitlistSection() {
               Feedback
             </label>
             <textarea
-              className="w-full rounded-card bg-content-frame/80 border border-white/10 px-4 py-3 text-type-body-sm text-input-card-text placeholder:text-body-secondary/70 focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-0 focus:border-transparent min-h-[120px] resize-vertical"
+              className="w-full rounded-card bg-content-frame/80 border border-white/10 px-4 py-3 text-type-body-sm text-input-card-text placeholder:text-input-card-text/80 focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-0 focus:border-transparent min-h-[120px] resize-vertical"
               placeholder="I think the pro price is too expensive"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
