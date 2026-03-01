@@ -60,7 +60,7 @@ export default function WaitlistModal({
       ) : result === "unavailable" ? (
         <div className="text-center py-4">
           <p className="text-type-body text-amber-400 mb-4">
-            Waitlist is not configured yet. Set up Supabase in .env.local and try again.
+            Waitlist is not configured yet. Set Supabase env vars (locally: .env.local; deployed: your host&apos;s environment variables). See README.
           </p>
           <Button onClick={handleClose}>OK</Button>
         </div>

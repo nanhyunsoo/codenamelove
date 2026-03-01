@@ -39,3 +39,11 @@ npm run dev
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase 프로젝트 URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon key |
 | `SUPABASE_SERVICE_ROLE_KEY` | (선택) 서버 측 권한 강화용 |
+
+## 배포 시 (Vercel 등)
+
+Join Waitlist가 배포 환경에서 동작하려면 **호스트에 동일한 환경 변수를 설정**해야 합니다. `.env.local`은 로컬 전용이라 배포 서버에는 없습니다.
+
+- **Vercel**: 프로젝트 → Settings → Environment Variables 에서 다음 추가  
+  `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, (선택) `SUPABASE_SERVICE_ROLE_KEY`
+- 추가 후 재배포(Redploy) 한 번 하면 Waitlist API가 정상 동작합니다.
