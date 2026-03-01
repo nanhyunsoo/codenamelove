@@ -9,7 +9,7 @@ import PreferencesCard from "@/components/landing/PreferencesCard";
 export default function FeaturesSection() {
   return (
     <div className="max-w-6xl mx-auto px-6" id="product">
-      <h2 className="font-display text-type-h2 md:text-type-h1 font-bold text-headline text-center mb-16">
+      <h2 className="font-display text-type-h1 md:text-type-display font-bold text-headline text-center mb-16 pb-6 border-b-2 border-headline/40">
         How it works
       </h2>
 
