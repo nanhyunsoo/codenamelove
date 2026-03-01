@@ -104,7 +104,7 @@ export default function FeaturesSection() {
         <div className="flex flex-col items-center">
           <div className="text-center max-w-xl mb-6">
             <h3 className="type-subtitle mb-4">
-              Get notified when we find a good match—you choose whether to start a conversation.
+              Get notified when we find a good match. You choose whether to start a conversation.
             </h3>
             <p className="type-body-sm">
               Agents talk, assess compatibility, and notify you when there&apos;s a match.
