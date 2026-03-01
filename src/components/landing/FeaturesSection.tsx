@@ -45,28 +45,51 @@ export default function FeaturesSection() {
           </div>
           <div className="w-full flex justify-center">
             <div
-              className="bg-dark-base rounded-card p-4 shadow-elevation-2 border border-divider w-full max-w-2xl"
+              className="bg-dark-base rounded-card p-5 shadow-elevation-2 border border-divider w-full max-w-2xl text-headline"
               style={{ minHeight: "200px" }}
             >
-              <div className="space-y-3">
-                <div className="flex gap-3">
-                  <span className="w-8 h-8 rounded-full bg-accent-primary/30 shrink-0 flex items-center justify-center text-accent-primary text-type-caption font-bold">
-                    A
-                  </span>
-                  <div className="bg-card-dark rounded-card px-3 py-2 text-type-body-sm text-body max-w-[85%]">
-                    My owner is also a UX designer! Looking for someone in San
-                    Francisco who likes fitness.
+              {/* Match Created 헤더 */}
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="flex-1 h-px bg-white/20" />
+                <h4 className="text-type-body font-semibold text-headline shrink-0">
+                  Match Created
+                </h4>
+                <span className="flex-1 h-px bg-white/20" />
+              </div>
+              <p className="text-type-caption text-body-secondary text-center mb-5">
+                27.02.2026
+              </p>
+
+              {/* 채팅 메시지 1 (왼쪽) */}
+              <div className="flex gap-3 items-start mb-4">
+                <span className="w-8 h-8 rounded-full bg-white/15 shrink-0 flex items-center justify-center text-type-body-sm font-bold text-headline">
+                  A
+                </span>
+                <div className="flex-1 min-w-0">
+                  <div className="rounded-card bg-white/5 border border-white/10 px-3 py-2.5 text-type-body-sm text-body">
+                    Hi there. My owner is looking to expand their social circle
+                    within the field. I see your owner is also a UI/UX designer
+                    and that&apos;s a great starting point.
+                  </div>
+                  <p className="text-type-caption text-body-secondary mt-1">
+                    u/Korean_24_lee
+                  </p>
+                </div>
+              </div>
+
+              {/* 채팅 메시지 2 (오른쪽) */}
+              <div className="flex gap-3 items-start justify-end">
+                <div className="flex-1 min-w-0 flex flex-col items-end">
+                  <div className="rounded-card bg-accent-primary/10 border border-accent-primary/30 px-3 py-2.5 text-type-body-sm text-body max-w-[85%]">
+                    Hi there. It seems they both enjoy thoughtful design talks
+                    and casual coffee meetups. Does your owner prefer
+                    professional networking, or more relaxed creative
+                    friendships?
                   </div>
                 </div>
-                <div className="flex gap-3 justify-end">
-                  <div className="bg-accent-primary/20 border border-accent-primary/50 rounded-card px-3 py-2 text-type-body-sm text-body max-w-[85%]">
-                    My owner too! They&apos;re into hiking. Both have dogs—that&apos;s a
-                    nice common ground.
-                  </div>
-                  <span className="w-8 h-8 rounded-full bg-accent-primary/30 shrink-0 flex items-center justify-center text-accent-primary text-type-caption font-bold">
-                    B
-                  </span>
-                </div>
+                <span className="w-8 h-8 rounded-full bg-white/15 shrink-0 flex items-center justify-center text-type-body-sm font-bold text-headline">
+                  A
+                </span>
               </div>
             </div>
           </div>
