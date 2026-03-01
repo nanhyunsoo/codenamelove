@@ -103,9 +103,11 @@ export default function PreferencesCard() {
                 Search city or zip code
               </span>
             </div>
-            <div className="flex items-center gap-2 rounded-card bg-white/5 border border-white/15 px-3 py-2 text-type-body-sm text-headline">
-              <span>✈️</span>
-              Use Current Location
+            <div className="flex items-center gap-2 mt-1">
+              <span className="text-sm opacity-80">✈️</span>
+              <span className="text-type-body-sm text-accent-primary underline underline-offset-2 cursor-pointer hover:text-accent-hover">
+                Use Current Location
+              </span>
             </div>
           </div>
 
