@@ -50,6 +50,7 @@ export default function WaitlistSection() {
 
       setStatus("success");
       setMessage("");
+      setEmail("");
     } catch {
       setError("Failed to send feedback. Please try again.");
       setStatus("error");
