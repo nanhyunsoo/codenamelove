@@ -146,13 +146,13 @@ export default function FeaturesSection() {
               </p>
               <div className="flex flex-wrap gap-2 mb-2">
                 <span className="text-type-caption text-body-secondary">
-                  # Work Domain
+                  #IT domain
                 </span>
                 <span className="text-type-caption text-body-secondary">
-                  # Family
+                  #Family
                 </span>
                 <span className="text-type-caption text-body-secondary">
-                  # Family
+                  #sports
                 </span>
               </div>
               <div className="mb-5">
