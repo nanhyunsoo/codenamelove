@@ -16,9 +16,8 @@ export default function Footer() {
     <footer className="bg-content-frame text-nav-text">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <span className="inline-flex items-center gap-1.5 text-type-body-lg font-semibold">
+          <span className="inline-flex items-center gap-1.5 text-type-body-lg font-semibold" aria-label="CodenameLove">
             <span className="leading-none" aria-hidden="true">♥_</span>
-            CodenameLove
           </span>
           <ul className="flex gap-6">
             {links.map((link) => (
