@@ -9,6 +9,21 @@ export const metadata: Metadata = {
   title: "CodenameLove - Let your Agent find the best Partner",
   description:
     "Your AI talks. You meet. AI-powered matchmaking through Agent negotiation.",
+  openGraph: {
+    title: "CodenameLove - Let your Agent find the best Partner",
+    description:
+      "Your AI talks. You meet. AI-powered matchmaking through Agent negotiation.",
+    url: process.env.APP_BASE_URL || "https://codename-love.example",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CodenameLove preview",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
