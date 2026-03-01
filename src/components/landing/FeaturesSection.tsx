@@ -162,9 +162,12 @@ export default function FeaturesSection() {
                 </span>
               </div>
 
-              {/* CTA */}
+              {/* CTA - 비클릭 가능, 시각적 표시만 */}
               <div className="flex justify-end">
-                <div className="inline-flex items-center gap-2 rounded-pill bg-accent-primary text-cta-dark px-7 py-3.5 text-type-body-sm font-medium shadow-cta-primary hover:bg-accent-hover active:bg-accent-active transition-colors focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-2 focus:ring-offset-dark-base">
+                <div
+                  className="inline-flex items-center gap-2 rounded-pill bg-accent-primary text-cta-dark px-7 py-3.5 text-type-body-sm font-medium shadow-cta-primary cursor-default pointer-events-none select-none"
+                  aria-hidden="true"
+                >
                   Start Conversation
                 </div>
               </div>
