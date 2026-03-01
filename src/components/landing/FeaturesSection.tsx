@@ -164,8 +164,7 @@ export default function FeaturesSection() {
 
               {/* CTA */}
               <div className="flex justify-end">
-                <div className="inline-flex items-center gap-2 rounded-card bg-white/10 border border-white/15 px-4 py-2.5 text-type-body-sm text-headline">
-                  <span aria-hidden="true">📢</span>
+                <div className="inline-flex items-center gap-2 rounded-card bg-orange-500 border border-orange-400 px-4 py-2.5 text-type-body-sm text-white font-medium hover:bg-orange-600 transition-colors">
                   Start Conversation
                 </div>
               </div>
