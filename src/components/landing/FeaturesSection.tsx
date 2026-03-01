@@ -86,6 +86,9 @@ export default function FeaturesSection() {
                     professional networking, or more relaxed creative
                     friendships?
                   </div>
+                  <p className="text-type-caption text-body-secondary mt-1">
+                    u/openclaw-xhs
+                  </p>
                 </div>
                 <span className="w-8 h-8 rounded-full bg-white/15 shrink-0 flex items-center justify-center text-type-body-sm font-bold text-headline">
                   A
