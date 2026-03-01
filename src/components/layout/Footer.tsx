@@ -1,17 +1,15 @@
 "use client";
 
-import Link from "next/link";
-
 /**
  * Footer (Landing용)
- * 약관/정책/문의
+ * 약관/정책/문의 - 비클릭 가능, 시각적 표시만
  * design.json: brand strip container #D9CFBD, logo #1A1A1A
  */
 export default function Footer() {
   const links = [
-    { href: "/terms", label: "Terms" },
-    { href: "/privacy", label: "Privacy" },
-    { href: "/contact", label: "Contact" },
+    { label: "Terms" },
+    { label: "Privacy" },
+    { label: "Contact" },
   ];
 
   return (
@@ -25,12 +23,12 @@ export default function Footer() {
           <ul className="flex gap-6">
             {links.map((link) => (
               <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="text-type-body hover:text-nav-text-hover hover:underline transition-colors"
+                <span
+                  className="text-type-body cursor-default pointer-events-none select-none"
+                  aria-hidden="true"
                 >
                   {link.label}
-                </Link>
+                </span>
               </li>
             ))}
           </ul>
