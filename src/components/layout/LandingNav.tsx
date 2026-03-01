@@ -30,7 +30,7 @@ export default function LandingNav() {
         {/* 오른쪽: Pricing + Join Waitlist */}
         <div className="flex items-center gap-4">
           <Link
-            href="/#product"
+            href="/pricing"
             className="text-type-body text-nav-text hover:text-nav-text-hover hover:underline transition-colors"
           >
             Pricing
