@@ -41,7 +41,7 @@ export default function LandingPage() {
 
   return (
     <main className="min-h-screen">
-      <LandingNav />
+      <LandingNav onJoinWaitlist={() => setWaitlistModalOpen(true)} />
       {/* Hero - design.json: dark base, no shadow on hero */}
       <section id="hero" className="relative">
         <div className="mx-auto max-w-7xl px-6 py-8 md:py-12">

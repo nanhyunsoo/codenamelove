@@ -6,8 +6,13 @@ import Link from "next/link";
  * Top Navigation (Landing용)
  * Pricing + Join Waitlist (우측), 중앙 메뉴 제거
  * design.json: container #D9CFBD, text #1A1A1A, CTA 버튼 #111111
+ * onJoinWaitlist가 있으면 Join Waitlist 클릭 시 모달 열기(히어로 버튼과 동일), 없으면 /#waitlist로 스크롤
  */
-export default function LandingNav() {
+interface LandingNavProps {
+  onJoinWaitlist?: () => void;
+}
+
+export default function LandingNav({ onJoinWaitlist }: LandingNavProps) {
   return (
     <header
       className="sticky top-0 z-40 bg-content-frame"
@@ -35,12 +40,22 @@ export default function LandingNav() {
           >
             Pricing
           </Link>
-          <Link
-            href="/#waitlist"
-            className="rounded-pill bg-cta-dark text-white px-[18px] py-2.5 text-type-body-sm font-medium hover:bg-cta-dark-hover transition-colors"
-          >
-            Join Waitlist
-          </Link>
+          {onJoinWaitlist ? (
+            <button
+              type="button"
+              onClick={onJoinWaitlist}
+              className="rounded-pill bg-cta-dark text-white px-[18px] py-2.5 text-type-body-sm font-medium hover:bg-cta-dark-hover transition-colors"
+            >
+              Join Waitlist
+            </button>
+          ) : (
+            <Link
+              href="/#waitlist"
+              className="rounded-pill bg-cta-dark text-white px-[18px] py-2.5 text-type-body-sm font-medium hover:bg-cta-dark-hover transition-colors"
+            >
+              Join Waitlist
+            </Link>
+          )}
         </div>
       </nav>
     </header>
