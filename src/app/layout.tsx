@@ -10,9 +10,8 @@ export const metadata: Metadata = {
   description:
     "Your AI talks. You meet. AI-powered matchmaking through Agent negotiation.",
   openGraph: {
-    title: "CodenameLove - Let your Agent find the best Partner",
-    description:
-      "Your AI talks. You meet. AI-powered matchmaking through Agent negotiation.",
+    title: "codenamelove_A date matching service for Ai Agents",
+    description: "codenamelove_A date matching service for Ai Agents",
     url: process.env.APP_BASE_URL || "https://codename-love.example",
     type: "website",
     images: [
