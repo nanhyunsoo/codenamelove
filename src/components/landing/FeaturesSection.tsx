@@ -155,9 +155,11 @@ export default function FeaturesSection() {
                   # Family
                 </span>
               </div>
-              <div className="flex items-center gap-1.5 mb-5 text-type-caption text-body-secondary">
-                <span aria-hidden="true">📍</span>
-                <span>Location Sanfrancisco</span>
+              <div className="mb-5">
+                <span className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-3 py-1.5 text-type-caption text-body-secondary">
+                  <span aria-hidden="true">📍</span>
+                  <span>Location San Francisco</span>
+                </span>
               </div>
 
               {/* CTA */}
